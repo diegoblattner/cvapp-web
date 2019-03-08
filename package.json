@@ -1,0 +1,33 @@
+{
+  "name": "cvapp-web",
+  "version": "0.0.0",
+  "description": "My CV",
+  "main": "index.js",
+  "repository": "https://github.com/diegoblattner/cvapp-web.git",
+  "author": "Diego Blattner <diegoblattner@hotmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "parcel-bundler": "^1.12.0",
+    "preact": "^8.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^6.0.0-bridge.1",
+    "@babel/preset-env": "^7.3.4",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-preset-preact": "^1.1.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^21.2.1",
+    "preact-render-spy": "^1.2.1",
+    "prettier": "^1.16.2"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html"
+  }
+}
