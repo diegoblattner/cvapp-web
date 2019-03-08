@@ -5,7 +5,8 @@
     "avatar": "https://scontent.fdub3-1.fna.fbcdn.net/v/t1.0-1/p40x40/46806658_1936741216443571_7703200806618529792_n.jpg?_nc_cat=110&_nc_ht=scontent.fdub3-1.fna&oh=8596aa88246ca446faf75093528be1e8&oe=5D176ABB",
     "email": "diegoblattner@hotmail.com",
     "github": "https://github.com/diegoblattner",
-    "linkedin": "https://www.linkedin.com/in/diego-blattner-225a69a7/"
+    "linkedin": "https://www.linkedin.com/in/diego-blattner-225a69a7/",
+    "bio": "A short bio goes here"
   },
   "skills": [
     "JavaScript",
@@ -18,8 +19,161 @@
     "CI/CD",
     "People Management"
   ],
-  "work": [],
-  "education": [],
-  "certifications": [],
-  "languages": []
+  "experience": [
+    {
+      "company": "CarTrawler",
+      "avatar": "",
+      "site": "www.cartrawler.com",
+      "roles": [
+        {
+          "name": "Engineering Manager",
+          "startDate": "April 2017",
+          "endDate": "Aug 2018",
+          "projects": [
+            {
+              "name": "CMS Project",
+              "description": "Migrated the legacy landing pages platform from Play Framework to Node.js. The new platform is a white label project built using React with Server-Side rendering, mobile first, following a microservices/​microfrontends approach where each site component is independent and can be deployed separately. The microsite is dynamically rendered according to the data received from the CMS API.",
+              "tasks": [
+                "Managed a team of 3 (2 JavaScript developers and 1 QA)",
+                "Held regular refinement sessions with commercial, PM, designers and backend developers to align requirements and create BDD scenarios",
+                "Enhanced developer experience: A CLI tool was created to scaffold components with a standardized folder structure for them, with style, test and Storybook files ready",
+                "Defined the CI and CD processes. 100% unit test code coverage. Applications with their own Docker container in a Kubernetes cluster hosted in AWS",
+                "Held regular 1-2-1s, set team members objectives, held salary reviews and performance conversations"
+              ]
+            },
+            {
+              "name": "Car Mobile Web Project",
+              "description": "Developed and maintained an adaptive white label version of the car booking engine. The legacy application was built in AngularJS 1.6 and was re-designed to look and feel like a native app, which resulted in a 35% increase of the conversion rate when compared to the old mobile web app.",
+              "tasks": [
+                "Managed a team of 5 (4 JavaScript developers and 1 QA)",
+                "Wrote reusable, readable, maintainable and future proof code",
+                "Held regular agile ceremonies",
+                "Wrote BDD scenarios",
+                "Held a regular Show & Tell session with the team members",
+                "Talent acquisition: Analyse CVs, phone screens, code assessments and face to face interviews",
+                "Held regular 1-2-1s, set team members objectives, hold salary reviews and performance conversations"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Javascript Developer",
+          "startDate": "April 2017",
+          "endDate": "Aug 2018",
+          "projects": [
+            {
+              "name": "Ground Transportation Project",
+              "description": "Developed javascript applications for the Ground Transportation industry. Writing new projects and features as well as maintaining old code. Work with project managers and designers, taking part in the decision making process since the conception of a product/feature.",
+              "tasks": [
+                "Wrote readable, maintainable and future proof code",
+                "Improved the code base and processes according to new trends and best practices",
+                "Helped with the company onboarding showing the code base and company culture to new employees",
+                "Deployed applications to QA and Production environments. Monitored error logs, deployed hotfixes",
+                "Worked with backend developers, making sure we were aligned with the project goals and the correct API data was provided in the most efficient manner",
+                "Answered internal business questions related to the products",
+                "Suggested new features and wrote BDD scenarios for them",
+                "Proactively created improvement tickets and assigned tasks to myself",
+                "Assigned tasks to other developers during planning sessions"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "EMPRO Technology & Information",
+      "avatar": "",
+      "site": "https://www.empro.com.br/",
+      "roles": [
+        {
+          "name": "FullStack Developer",
+          "startDate": "Oct 2013",
+          "endDate": "Feb 2015",
+          "projects": [
+            {
+              "name": null,
+              "description": null,
+              "tasks": [
+                "Web Applications development with ColdFusion, PHP, HTML, Javascript, jQuery, CSS, ajax",
+                "RESTful services development",
+                "Modular components development",
+                "Database modeling (Oracle)",
+                "Architecture and best practices implementations",
+                "Business analysis, requirements elicitation, prototyping, cost estimation and software specification"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "PCA Software Engineering",
+      "avatar": "",
+      "site": "https://www.pca.com.br/",
+      "roles": [
+        {
+          "name": ".Net Developer - FullStack",
+          "startDate": "Oct 2013",
+          "endDate": "Feb 2015",
+          "projects": [
+            {
+              "name": null,
+              "description": null,
+              "tasks": [
+                "Web Applications development using. Net MVC, Silverlight, HTML, Javascript, jQuery, CSS, ajax, WCF",
+                "RESTful services development",
+                "Database modeling (Microsoft SQL Server and Oracle)",
+                "Research new technologies, architecture and best practices implementation",
+                "Business analysis, requirements elicitation, prototyping, cost estimation and software specification"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Technology College of São José do Rio Preto – FATEC",
+      "avatar": "",
+      "course": "Technology Degree in Informatics for Business",
+      "period": "2007 - 2010"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Developing Microsoft Azure and Web Services",
+      "provider": "Microsoft",
+      "date": "December 2013"
+    },
+    {
+      "name": "Developing ASP.NET MVC Web Applications",
+      "provider": "Microsoft",
+      "date": "July 2013"
+    },
+    {
+      "name": "Advanced Windows Store App Development using HTML5 and JavaScript",
+      "provider": "Microsoft",
+      "date": "April 2013"
+    },
+    {
+      "name": "Essentials of Developing Windows Store Apps using HTML5 and JavaScript",
+      "provider": "Microsoft",
+      "date": "April 2013"
+    },
+    {
+      "name": "Programming in HTML5 with JavaScript and CSS3",
+      "provider": "Microsoft",
+      "date": "January 2013"
+    },
+    {
+      "name": "TS: Web Applications Development with Microsoft .NET Framework 4",
+      "provider": "Microsoft",
+      "date": "November 2011"
+    }
+  ],
+  "languages": [
+    { "name": "English", "level": "Fluent" },
+    { "name": "Portuguese", "level": "Native" }
+  ]
 }
