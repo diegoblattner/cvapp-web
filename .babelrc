@@ -1,0 +1,4 @@
+{
+  "presets": ["preact"],
+  "plugins": ["syntax-async-functions"]
+}
