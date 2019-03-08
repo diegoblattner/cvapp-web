@@ -1,26 +1,17 @@
 import { h, Component } from 'preact';
-import { Profile } from '../Profile/component';
-import { Skills } from '../Skills/component';
+import { AppLoading } from './loading.component';
+import { AppError } from './error.component';
+import { AppMain } from './main.component';
 
 const UIStates = {
   loading() {
-    return <div>Loading....</div>;
+    return <AppLoading />;
   },
-  loaded({ profile, skills }) {
-    return (
-      <div>
-        <Profile {...profile} />
-        <Skills skills={skills} />
-      </div>
-    );
+  loaded(cvData) {
+    return <AppMain cvData={cvData} />;
   },
   error() {
-    return (
-      <div>
-        <b>Something went astray =(</b>
-        <small>Refreshing the page might work</small>
-      </div>
-    );
+    return <AppError />;
   },
 };
 

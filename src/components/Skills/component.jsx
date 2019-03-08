@@ -1,11 +1,11 @@
 import { h } from 'preact';
 
-const Skills = skillsProps => (
+const Skills = ({ skills }) => (
   <section>
     <h3>Skills</h3>
     <ul>
-      {skillsProps.skills.map((skill, index) => (
-        <li key={index}>{skill}</li>
+      {skills.map((skill, i) => (
+        <li key={i}>{skill}</li>
       ))}
     </ul>
   </section>
