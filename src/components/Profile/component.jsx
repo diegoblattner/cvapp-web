@@ -1,7 +1,8 @@
 import { h } from 'preact';
+import { Links } from '../Links/component';
 
 const Profile = profileProps => {
-  const { avatar, name, position, github, linkedin, email } = profileProps;
+  const { avatar, name, position } = profileProps;
 
   return (
     <header>
@@ -10,11 +11,7 @@ const Profile = profileProps => {
         <h1>{name}</h1>
         <h2>{position}</h2>
       </div>
-      <div>
-        <a href={github}>GitHub</a>
-        <a href={linkedin}>Linkedin</a>
-        <a href={`mailto:${email}`}>E-mail</a>
-      </div>
+      <Links links={profileProps} />
     </header>
   );
 };
