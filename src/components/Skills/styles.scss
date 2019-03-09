@@ -1,0 +1,48 @@
+.skills {
+}
+
+.skills__list {
+  column-count: 3;
+  padding: 0 2rem 0.6rem;
+  list-style: square;
+}
+
+@media only screen and (max-width: 649px) {
+  .skills {
+    overflow-x: scroll;
+  }
+
+  .skills__list {
+    width: 110%;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .skills {
+    overflow-x: scroll;
+  }
+
+  .skills__list {
+    width: 135%;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .skills {
+    overflow-x: scroll;
+  }
+
+  .skills__list {
+    width: 150%;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .skills {
+    overflow-x: scroll;
+  }
+
+  .skills__list {
+    width: 190%;
+  }
+}
