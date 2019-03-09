@@ -1,0 +1,28 @@
+$avatarWidth: 3rem;
+
+.profile {
+  margin: 1rem;
+}
+
+.profile__avatar {
+  float: left;
+  width: $avatarWidth - 1rem;
+  padding-right: 1rem;
+  border-radius: 50%;
+}
+
+.profile__name {
+  padding-left: $avatarWidth;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+  margin: 0.2em 0;
+}
+
+.profile__position {
+  padding-left: $avatarWidth;
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+  font-weight: 400;
+  margin: 0.2em 0;
+}
