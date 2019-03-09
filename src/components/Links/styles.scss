@@ -1,0 +1,41 @@
+.links {
+  margin: 0.5rem;
+}
+
+.links__button {
+  width: 20%;
+  margin: 0 0.45rem;
+  display: inline-block;
+  transform: translateY(30%);
+  opacity: 0;
+  animation-name: popUp;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.links__button + .links__button {
+  animation-delay: 0.15s;
+}
+
+.links__button + .links__button + .links__button {
+  animation-delay: 0.3s;
+}
+
+.links__button + .links__button + .links__button + .links__button {
+  animation-delay: 0.45s;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0.5;
+    transform: translateY(30%);
+  }
+  88% {
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

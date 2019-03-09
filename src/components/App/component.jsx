@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import './styles.scss';
 import { AppLoading } from './loading.component';
 import { AppError } from './error.component';
 import { AppMain } from './main.component';
