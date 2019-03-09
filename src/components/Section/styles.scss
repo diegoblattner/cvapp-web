@@ -1,0 +1,38 @@
+.section {
+  padding: 0;
+  margin: 0.8rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  opacity: 0;
+  transform: translateY(20%);
+}
+
+.section__ruler {
+  margin: 0 0.5rem;
+  border-top: 1px solid #c9c9c9;
+}
+
+.section__title {
+  padding: 0;
+  margin: 1rem 0.2rem;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+
+.section--in-view {
+  animation-name: popUp;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
