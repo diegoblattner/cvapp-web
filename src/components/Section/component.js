@@ -59,7 +59,7 @@ class Section extends Component {
             <h3 className={styles.section__title}>{title}</h3>
           </div>
         )}
-        <div className={styles.section__content}>{children}</div>
+        {children}
       </section>
     );
   }
