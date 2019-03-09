@@ -10,6 +10,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "autoprefixer": "^9.4.10",
+    "debounce": "github:diegoblattner/debounce#master",
     "parcel-bundler": "^1.12.0",
     "postcss-modules": "^1.4.1",
     "preact": "^8.4.2"

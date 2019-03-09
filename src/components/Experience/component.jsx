@@ -10,14 +10,11 @@ class Experience extends Component {
     const { experience } = this.props;
 
     return (
-      <section>
-        <h3>Experience</h3>
-        <ul click={this.selectExperience}>
-          {experience.map((exp, i) => (
-            <Company key={i} {...exp} />
-          ))}
-        </ul>
-      </section>
+      <ul click={this.selectExperience}>
+        {experience.map((exp, i) => (
+          <Company key={i} {...exp} />
+        ))}
+      </ul>
     );
   }
 }

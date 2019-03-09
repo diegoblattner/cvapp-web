@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import { Section } from '../Section/component';
 import { Button } from '../Button/component';
 import { iconsEnum } from '../Icons/component';
 import styles from './styles.scss';
@@ -17,11 +18,11 @@ class Links extends Component {
     const { github, linkedin, email } = this.props.links;
 
     return (
-      <section className={styles.links}>
+      <Section className={styles.links}>
         {buttons.map((props, i) => (
           <Button className={styles.links__button} {...props} key={i} />
         ))}
-      </section>
+      </Section>
     );
   }
 }
