@@ -22,8 +22,8 @@
   "experience": [
     {
       "company": "CarTrawler",
-      "avatar": "",
-      "site": "www.cartrawler.com",
+      "avatar": "https://www.cartrawler.com/ct/wp-content/themes/cartrawler2017/assets/img/logo2017.png",
+      "site": "https://www.cartrawler.com",
       "roles": [
         {
           "name": "Engineering Manager",
@@ -82,7 +82,7 @@
     },
     {
       "company": "EMPRO Technology & Information",
-      "avatar": "",
+      "avatar": "https://www.empro.com.br/images/empro.png",
       "site": "https://www.empro.com.br/",
       "roles": [
         {
@@ -108,7 +108,7 @@
     },
     {
       "company": "PCA Software Engineering",
-      "avatar": "",
+      "avatar": "https://www.pca.com.br/site/Content/image/logo1-default.png",
       "site": "https://www.pca.com.br/",
       "roles": [
         {
