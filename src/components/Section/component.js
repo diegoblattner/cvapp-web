@@ -4,8 +4,9 @@ import styles from './styles.scss';
 
 const inViewClass = styles['section--in-view'];
 
+const uiGap = 30;
 const elementIsInView = element => {
-  const top = element.offsetTop;
+  const top = element.offsetTop + uiGap;
   return top < window.pageYOffset + window.innerHeight;
 };
 
