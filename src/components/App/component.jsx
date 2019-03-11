@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import './styles.scss';
+import { loadCV } from '../../services/cv';
 import { AppLoading } from './loading.component';
 import { AppError } from './error.component';
 import { AppMain } from './main.component';
@@ -24,23 +25,12 @@ export class App extends Component {
   }
 
   async componentDidMount() {
-    try {
-      const cvData = await import('../../../mock/cv-data.json');
-      // const cvDataStream = await fetch('../../../mock/cv-data.json');
-      // const cvData = await cvDataStream.json();
+    const cvData = await loadCV();
 
-      this.setState({
-        uiState: UIStates.loaded,
-        cvData,
-      });
-    } catch (e) {
-      console.error('error loading the json', e);
-      // TODO: log error...
-      this.setState({
-        uiState: UIStates.error,
-        cvData: {},
-      });
-    }
+    this.setState({
+      uiState: cvData ? UIStates.loaded : UIStates.error,
+      cvData,
+    });
   }
 
   render() {

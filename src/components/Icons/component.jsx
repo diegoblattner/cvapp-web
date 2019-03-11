@@ -7,6 +7,7 @@ const iconsEnum = {
   email: 'email',
   plus: 'plus',
   newTab: 'new-tab',
+  chevron: 'chevron',
 };
 
 const iconId = icon => `icon-${icon}`;
@@ -45,6 +46,10 @@ const IconDefs = () => (
         <title>{iconsEnum.newTab}</title>
         <path d="M6 2v24h24v-24h-24zM28 24h-20v-20h20v20zM4 28v-21l-2-2v25h25l-2-2h-21z" />
         <path d="M11 8l5 5-6 6 3 3 6-6 5 5v-13z" />
+      </symbol>
+      <symbol id={iconId(iconsEnum.chevron)} viewBox="0 0 32 32">
+        <title>{iconsEnum.chevron}</title>
+        <path d="M11.086 22.086l2.829 2.829 8.914-8.914-8.914-8.914-2.828 2.828 6.086 6.086z" />
       </symbol>
     </defs>
   </svg>
