@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { Icon } from '../Icons/component';
+import { Icon } from '../Icons/Icons';
 import styles from './styles.scss';
 
 const Button = ({ className = '', text, icon, onClick }) => (

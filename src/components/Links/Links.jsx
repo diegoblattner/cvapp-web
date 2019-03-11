@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
-import { Section } from '../Section/component';
-import { Button } from '../Button/component';
-import { iconsEnum } from '../Icons/component';
+import { Section } from '../Section/Section';
+import { Button } from '../Button/Button';
+import { iconsEnum } from '../Icons/Icons';
 import styles from './styles.scss';
 
 const buttonProps = (text, icon) => ({ text, icon });

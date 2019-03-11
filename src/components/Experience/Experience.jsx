@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { Role } from '../Role/component';
+import { Role } from '../Role/Role';
 import styles from './styles.scss';
 
 class Experience extends Component {
