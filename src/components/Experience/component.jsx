@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { Company } from '../Company/component';
+import { Role } from '../Role/component';
 import styles from './styles.scss';
 
 class Experience extends Component {
@@ -12,8 +12,8 @@ class Experience extends Component {
 
     return (
       <ul className={styles.experience} click={this.selectExperience}>
-        {experience.map((exp, i) => (
-          <Company key={i} {...exp} />
+        {experience.map((role, i) => (
+          <Role key={i} {...role} />
         ))}
       </ul>
     );

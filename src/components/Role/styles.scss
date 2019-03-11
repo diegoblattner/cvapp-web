@@ -1,15 +1,30 @@
+$padding-left: 4.25rem;
+
 .role {
+  position: relative;
   margin-bottom: 1rem;
 }
 
 .role__name {
+  padding-left: $padding-left;
+  padding-top: 0.25rem;
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
   font-weight: 500;
 }
 
 .role__period {
   display: block;
+  padding-left: $padding-left;
   font-size: 1rem;
   font-weight: 400;
+}
+
+.role__select {
+  position: absolute;
+  top: calc(50% - 1.25rem);
+  right: -0.25rem;
+  color: #2f344e;
+  font-size: 2.25rem;
 }
