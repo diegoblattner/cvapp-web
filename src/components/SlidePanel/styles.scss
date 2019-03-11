@@ -1,0 +1,22 @@
+.container--sllidepanelon {
+  position: fixed;
+  overflow: hidden;
+}
+
+.slidepanel {
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  background: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  transform: translateX(110%);
+  transition: transform 0.5s;
+  box-shadow: 0 0 4rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.slidepanel--open {
+  transform: translateX(0%);
+}
