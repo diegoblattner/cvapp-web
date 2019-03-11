@@ -2,7 +2,7 @@ import { h } from 'preact';
 import styles from './styles.scss';
 import { Avatar } from '../Avatar/Avatar';
 import { getCompany } from '../../services/cv';
-import { Icon, iconsEnum } from '../Icons/component';
+import { Icon, iconsEnum } from '../Icons/Icons';
 
 const Role = ({ role, startDate, endDate = 'Now', company }) => {
   const { avatar } = getCompany(company);

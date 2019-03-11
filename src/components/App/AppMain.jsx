@@ -1,13 +1,13 @@
 import { h, Component } from 'preact';
-import { Section } from '../Section/component';
-import { Profile } from '../Profile/component';
-import { Links } from '../Links/component';
-import { Skills } from '../Skills/component';
-import { Experience } from '../Experience/component';
-import { Certifications } from '../Certifications/component';
-import { Education } from '../Education/component';
-import { Languages } from '../Languages/component';
-import { IconDefs } from '../Icons/component';
+import { Section } from '../Section/Section';
+import { Profile } from '../Profile/Profile';
+import { Links } from '../Links/Links';
+import { Skills } from '../Skills/Skills';
+import { Experience } from '../Experience/Experience';
+import { Certifications } from '../Certifications/Certifications';
+import { Education } from '../Education/Education';
+import { Languages } from '../Languages/Languages';
+import { IconDefs } from '../Icons/Icons';
 
 class AppMain extends Component {
   render() {

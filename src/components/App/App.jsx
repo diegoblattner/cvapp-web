@@ -1,9 +1,9 @@
 import { h, Component } from 'preact';
 import './styles.scss';
 import { loadCV } from '../../services/cv';
-import { AppLoading } from './loading.component';
-import { AppError } from './error.component';
-import { AppMain } from './main.component';
+import { AppLoading } from './AppLoading';
+import { AppError } from './AppError';
+import { AppMain } from './AppMain';
 
 const UIStates = {
   loading() {
