@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import 'preact/devtools';
 import './styles.scss';
 import { loadCV } from '../../services/cv';
 import { AppLoading } from './AppLoading';

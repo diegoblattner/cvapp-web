@@ -8,41 +8,65 @@ import { Certifications } from '../Certifications/Certifications';
 import { Education } from '../Education/Education';
 import { Languages } from '../Languages/Languages';
 import { IconDefs } from '../Icons/Icons';
+import { withSlidePanel } from '../SlidePanel/withSlidePanel';
 
-class AppMain extends Component {
-  render() {
-    const {
-      profile,
-      skills,
-      experience,
-      certifications,
-      education,
-      languages,
-    } = this.props.cvData;
+const AppMain = withSlidePanel(
+  class AppMainBase extends Component {
+    openSlidePanel(component) {
+      const {
+        cvData: { experience },
+        slidePanel: { open, close },
+      } = this.props;
+      open(
+        <div>
+          <Section title="Experience">
+            <Experience experience={experience} onSelect={open} />
+          </Section>
+        </div>,
+        {
+          title: 'My title',
+        },
+      );
+    }
 
-    return (
-      <div>
-        <Profile {...profile} />
-        <Links links={profile} />
-        <Section title="Skills">
-          <Skills skills={skills} />
-        </Section>
-        <Section title="Experience">
-          <Experience experience={experience} />
-        </Section>
-        <Section title="Certifications">
-          <Certifications certifications={certifications} />
-        </Section>
-        <Section title="Education">
-          <Education education={education} />
-        </Section>
-        <Section title="Languages">
-          <Languages languages={languages} />
-        </Section>
-        <IconDefs />
-      </div>
-    );
-  }
-}
+    render() {
+      const {
+        profile,
+        skills,
+        experience,
+        certifications,
+        education,
+        languages,
+      } = this.props.cvData;
+      const { slidePanel: open, close } = this.props;
+
+      return (
+        <main>
+          <Profile {...profile} />
+          <Links links={profile} />
+          <Section title="Skills">
+            <Skills skills={skills} />
+          </Section>
+          <Section title="Experience">
+            <Experience experience={experience} onSelect={open} />
+          </Section>
+          <Section title="Certifications">
+            <Certifications certifications={certifications} />
+          </Section>
+          <Section title="Education">
+            <Education education={education} />
+          </Section>
+          <Section title="Languages">
+            <Languages languages={languages} />
+          </Section>
+          <IconDefs />
+          <button onClick={this.openSlidePanel.bind(this)}>
+            Open side panel
+          </button>
+        </main>
+      );
+    }
+  },
+);
 
 export { AppMain };
