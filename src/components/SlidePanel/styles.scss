@@ -1,4 +1,4 @@
-.container--sllidepanelon {
+.container--slidepanelon {
   position: fixed;
   overflow: hidden;
 }
@@ -14,9 +14,37 @@
   overflow: auto;
   transform: translateX(110%);
   transition: transform 0.5s;
-  box-shadow: 0 0 4rem 1rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .slidepanel--open {
   transform: translateX(0%);
+}
+
+.slidepanel__header {
+  padding: 0.8rem;
+}
+
+.slidepanel__header + * {
+  clear: both;
+}
+
+.slidepanel__header__back {
+  margin: -0.5rem;
+  padding: 0.5rem;
+  background: none;
+  border: 0;
+  color: #2f344e;
+  float: left;
+  font-size: 1.4rem;
+  outline: 0;
+}
+
+.slidepanel__header__title {
+  padding: 0;
+  padding-left: 2.25rem;
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  font-weight: 500;
 }

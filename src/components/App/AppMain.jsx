@@ -14,12 +14,18 @@ const AppMain = withSlidePanel(
   class AppMainBase extends Component {
     openSlidePanel(component) {
       const {
+        cvData: { experience },
         slidePanel: { open, close },
       } = this.props;
       open(
         <div>
-          Testing....<button onClick={close}>Close....</button>
+          <Section title="Experience">
+            <Experience experience={experience} onSelect={open} />
+          </Section>
         </div>,
+        {
+          title: 'My title',
+        },
       );
     }
 

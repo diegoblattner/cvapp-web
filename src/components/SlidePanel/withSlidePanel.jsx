@@ -2,8 +2,16 @@ import { h, Component } from 'preact';
 import { SlidePanel } from './SlidePanel';
 import styles from './styles.scss';
 
-const slidePanelOpenedClassName = styles['container--slidepanelon'];
+const openedClassName = styles['container--slidepanelon'];
 const animationDuration = 500;
+
+const initialState = () => ({
+  opened: false,
+  openedClass: null,
+  component: null,
+  scrollPosition: null,
+  slidePanelProps: {},
+});
 
 /**
  * Adds a side panel to the received component
@@ -14,26 +22,22 @@ const withSlidePanel = WrappedComponent => {
   class HOC extends Component {
     constructor(props) {
       super(props);
-      this.state = {
-        slidePanelOpened: false,
-        openedClass: null,
-        slidePanelComponent: null,
-        scrollPosition: null,
-      };
+      this.state = initialState();
     }
 
-    openSlidePanel(component) {
+    openSlidePanel(component, slidePanelProps = {}) {
       this.setState({
         scrollPosition: [window.scrollX, window.scrollY],
-        slidePanelOpened: true,
-        slidePanelComponent: component,
+        opened: true,
+        component,
+        slidePanelProps,
       });
 
       // sets a timeout to add the auxiliar class after the animation has ocurred
       setTimeout(() => {
         this.setState(
           Object.assign({}, this.state, {
-            openedClass: slidePanelOpenedClassName,
+            openedClass: openedClassName,
           }),
         );
       }, animationDuration);
@@ -43,18 +47,13 @@ const withSlidePanel = WrappedComponent => {
       this.setState(
         Object.assign({}, this.state, {
           openedClass: null,
-          slidePanelOpened: false,
+          opened: false,
         }),
       );
 
       // sets a timeout to remove the component after the transition has occurred
       setTimeout(() => {
-        this.setState({
-          slidePanelOpened: false,
-          slidePanelComponent: null,
-          scrollPosition: null,
-          openedClass: null,
-        });
+        this.setState(initialState());
       }, animationDuration);
     }
 
@@ -64,8 +63,19 @@ const withSlidePanel = WrappedComponent => {
       }
     }
 
+    onBackButtonClick() {
+      const {
+        slidePanelProps: { onBackButtonClick },
+      } = this.state;
+      if (onBackButtonClick) {
+        onBackButtonClick();
+      } else {
+        this.closeSlidePanel();
+      }
+    }
+
     render() {
-      const { slidePanelOpened, slidePanelComponent, openedClass } = this.state;
+      const { opened, component, openedClass, slidePanelProps } = this.state;
 
       return (
         <div>
@@ -78,7 +88,12 @@ const withSlidePanel = WrappedComponent => {
               }}
             />
           </div>
-          <SlidePanel open={slidePanelOpened} component={slidePanelComponent} />
+          <SlidePanel
+            {...slidePanelProps}
+            open={opened}
+            component={component}
+            onBackButtonClick={this.onBackButtonClick.bind(this)}
+          />
         </div>
       );
     }
