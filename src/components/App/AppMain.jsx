@@ -4,6 +4,7 @@ import { Profile } from '../Profile/Profile';
 import { Links } from '../Links/Links';
 import { Skills } from '../Skills/Skills';
 import { Experience } from '../Experience/Experience';
+import { ExperienceDetails } from '../Experience/ExperienceDetails';
 import { Certifications } from '../Certifications/Certifications';
 import { Education } from '../Education/Education';
 import { Languages } from '../Languages/Languages';
@@ -12,21 +13,14 @@ import { withSlidePanel } from '../SlidePanel/withSlidePanel';
 
 const AppMain = withSlidePanel(
   class AppMainBase extends Component {
-    openSlidePanel(component) {
+    openExperiencePanel(role) {
       const {
         cvData: { experience },
         slidePanel: { open, close },
       } = this.props;
-      open(
-        <div>
-          <Section title="Experience">
-            <Experience experience={experience} onSelect={open} />
-          </Section>
-        </div>,
-        {
-          title: 'My title',
-        },
-      );
+      open(<ExperienceDetails experience={experience} selected={role} />, {
+        title: 'Experience',
+      });
     }
 
     render() {
@@ -48,7 +42,10 @@ const AppMain = withSlidePanel(
             <Skills skills={skills} />
           </Section>
           <Section title="Experience">
-            <Experience experience={experience} onSelect={open} />
+            <Experience
+              experience={experience}
+              onSelectRole={this.openExperiencePanel.bind(this)}
+            />
           </Section>
           <Section title="Certifications">
             <Certifications certifications={certifications} />
@@ -60,9 +57,6 @@ const AppMain = withSlidePanel(
             <Languages languages={languages} />
           </Section>
           <IconDefs />
-          <button onClick={this.openSlidePanel.bind(this)}>
-            Open side panel
-          </button>
         </main>
       );
     }

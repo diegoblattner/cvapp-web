@@ -3,17 +3,17 @@ import { Role } from '../Role/Role';
 import styles from './styles.scss';
 
 class Experience extends Component {
-  selectExperience(experience) {
-    this.props.experienceSelected(experience);
+  selectRole(role) {
+    this.props.onSelectRole(role);
   }
 
   render() {
     const { experience } = this.props;
 
     return (
-      <ul className={styles.experience} click={this.selectExperience}>
+      <ul className={styles.experience}>
         {experience.map((role, i) => (
-          <Role key={i} {...role} />
+          <Role key={i} {...role} onSelectRole={() => this.selectRole(i)} />
         ))}
       </ul>
     );

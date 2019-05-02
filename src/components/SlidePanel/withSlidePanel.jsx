@@ -2,7 +2,9 @@ import { h, Component } from 'preact';
 import { SlidePanel } from './SlidePanel';
 import styles from './styles.scss';
 
-const openedClassName = styles['container--slidepanelon'];
+const transitioningClassName =
+  styles['withslidepanel__container--transitioning'];
+const openedClassName = styles['withslidepanel__container--slidepanelon'];
 const animationDuration = 500;
 
 const initialState = () => ({
@@ -19,7 +21,7 @@ const initialState = () => ({
  * @param {Component} WrappedComponent
  */
 const withSlidePanel = WrappedComponent => {
-  class HOC extends Component {
+  class ComponentWithSlidePanel extends Component {
     constructor(props) {
       super(props);
       this.state = initialState();
@@ -75,11 +77,21 @@ const withSlidePanel = WrappedComponent => {
     }
 
     render() {
-      const { opened, component, openedClass, slidePanelProps } = this.state;
+      const {
+        className = '',
+        opened,
+        component,
+        openedClass = '',
+        slidePanelProps,
+      } = this.state;
 
       return (
-        <div>
-          <div className={openedClass}>
+        <div className={`${styles.withslidepanel} ${className}`}>
+          <div
+            className={`${styles.withslidepanel__container} ${
+              opened ? transitioningClassName : ''
+            } ${openedClass}`}
+          >
             <WrappedComponent
               {...this.props}
               slidePanel={{
@@ -99,7 +111,7 @@ const withSlidePanel = WrappedComponent => {
     }
   }
 
-  return HOC;
+  return ComponentWithSlidePanel;
 };
 
 export { withSlidePanel };
