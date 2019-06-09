@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 import { Icon, iconsEnum } from '../Icons/Icons';
 import styles from './styles.scss';
 

@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import styles from './styles.scss';
-import { Avatar } from '../Avatar/Avatar';
+import { Avatar } from '../../ui/Avatar/Avatar';
 import { getCompany } from '../../services/cv';
-import { Icon, iconsEnum } from '../Icons/Icons';
+import { Icon, iconsEnum } from '../../ui/Icons/Icons';
 
 const Role = ({ role, startDate, endDate = 'Now', company, onSelectRole }) => {
   const { avatar } = getCompany(company);

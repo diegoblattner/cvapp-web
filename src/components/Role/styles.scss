@@ -1,3 +1,4 @@
+@import '../../_variables';
 $padding-left: 4.25rem;
 
 .role {
@@ -25,6 +26,6 @@ $padding-left: 4.25rem;
   position: absolute;
   top: calc(50% - 1.25rem);
   right: -0.25rem;
-  color: #2f344e;
+  color: $primaryColor;
   font-size: 2.25rem;
 }

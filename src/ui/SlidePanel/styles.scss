@@ -1,3 +1,5 @@
+@import '../../_variables';
+
 $animation-duration: 0.5s;
 
 .withslidepanel {
@@ -52,7 +54,7 @@ $animation-duration: 0.5s;
   padding: 0.5rem;
   background: none;
   border: 0;
-  color: #2f344e;
+  color: $primaryColor;
   float: left;
   font-size: 1.4rem;
   outline: 0;
