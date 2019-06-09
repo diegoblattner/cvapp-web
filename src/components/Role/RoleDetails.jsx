@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import styles from './styles.scss';
-import { Avatar } from '../Avatar/Avatar';
+import { Avatar } from '../../ui/Avatar/Avatar';
 import { getCompany } from '../../services/cv';
 import { Role } from '../Role/Role';
 

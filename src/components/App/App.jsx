@@ -1,41 +1,38 @@
-import { h, Component } from 'preact';
-import 'preact/devtools';
+import { h } from 'preact';
+import { useState, useEffect } from 'preact/hooks';
 import './styles.scss';
 import { loadCV } from '../../services/cv';
 import { AppLoading } from './AppLoading';
 import { AppError } from './AppError';
 import { AppMain } from './AppMain';
 
+const ui = {
+  loading: 'loading',
+  loaded: 'loaded',
+  error: 'error',
+};
+
 const UIStates = {
-  loading() {
+  [ui.loading]() {
     return <AppLoading />;
   },
-  loaded(cvData) {
+  [ui.loaded](cvData) {
     return <AppMain cvData={cvData} />;
   },
-  error() {
+  [ui.error]() {
     return <AppError />;
   },
 };
 
-export class App extends Component {
-  constructor() {
-    super();
-    this.state.uiState = UIStates.loading;
-    this.cvData = {};
-  }
+export const App = () => {
+  const [uiState, setUiState] = useState(ui.loading);
+  const [cvData, setCvData] = useState({});
 
-  async componentDidMount() {
-    const cvData = await loadCV();
+  useEffect(async () => {
+    const result = await loadCV();
+    setCvData(result);
+    setUiState(result ? ui.loaded : ui.error);
+  }, []);
 
-    this.setState({
-      uiState: cvData ? UIStates.loaded : UIStates.error,
-      cvData,
-    });
-  }
-
-  render() {
-    const { uiState, cvData } = this.state;
-    return uiState(cvData);
-  }
-}
+  return UIStates[uiState](cvData);
+};

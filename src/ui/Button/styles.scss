@@ -1,3 +1,5 @@
+@import '../../_variables';
+
 .button {
   margin: 0;
   padding: 0;
@@ -5,8 +7,11 @@
   background: none;
   text-align: center;
   font-size: 0.8rem;
-  color: #2f344e;
+  color: $primaryColor;
   outline: 0;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .button__icon {
