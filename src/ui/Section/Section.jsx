@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import debounce from 'debounce';
 import { useState, useEffect, useRef } from 'preact/hooks';
-import styles from './styles.scss';
+import * as styles from './styles.module.scss';
 
 const inViewClass = styles['section--in-view'];
 

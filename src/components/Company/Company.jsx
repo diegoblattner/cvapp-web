@@ -1,9 +1,8 @@
 import { h } from 'preact';
 import { Role } from '../Role/Role';
-import styles from './styles.scss';
+import * as styles from './styles.module.scss';
 
-const Company = ({ company, avatar, roles }) => {
-  return (
+const Company = ({ company, avatar, roles }) => (
     <li className={styles.company}>
       <div
         className={styles.company__avatar}
@@ -18,6 +17,5 @@ const Company = ({ company, avatar, roles }) => {
       <button className={styles.company__details}>View details</button>
     </li>
   );
-};
 
 export { Company };

@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
-import './styles.scss';
+import * as styles from './styles.module.scss';
 import { loadCV } from '../../services/cv';
 import { AppLoading } from './AppLoading';
 import { AppError } from './AppError';
@@ -34,5 +34,9 @@ export const App = () => {
     setUiState(result ? ui.loaded : ui.error);
   }, []);
 
-  return UIStates[uiState](cvData);
+  return (
+    <main className={styles.main}>
+      {UIStates[uiState](cvData)}
+    </main>
+  );
 };

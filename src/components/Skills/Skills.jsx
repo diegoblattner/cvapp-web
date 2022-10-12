@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import styles from './styles.scss';
+import * as styles from './styles.module.scss';
 
 const Skills = ({ skills }) => (
   <div className={styles.skills}>

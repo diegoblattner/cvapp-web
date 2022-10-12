@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { Section } from '../../ui/Section/Section';
 import { Button, Link } from '../../ui/Button/Button';
 import { iconsEnum } from '../../ui/Icons/Icons';
-import styles from './styles.scss';
+import * as styles from './styles.module.scss';
 
 const Links = ({ links }) => {
   const { github, linkedin, email } = links;

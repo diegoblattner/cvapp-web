@@ -1,3 +1,43 @@
 $primaryColor: #2f344e;
 $blackColor: #000;
 $margin: 0.5rem;
+$maxWidth: 1024px;
+
+@mixin maxWidthQuery {
+  @media only screen and (min-width: $maxWidth) {
+    @content
+  }
+}
+
+@mixin maxWidthContainer {
+  @include maxWidthQuery {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+@mixin noHighlights {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin clickable {
+  cursor: pointer;
+  transition: transform 0.1s ease-in;
+  &:hover {
+    background-color: rgba($color: $blackColor, $alpha: 0.1);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgb(255, 136, 0);
+  }
+}

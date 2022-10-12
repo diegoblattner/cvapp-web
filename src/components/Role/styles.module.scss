@@ -3,7 +3,13 @@ $padding-left: 4.25rem;
 
 .role {
   position: relative;
-  margin-bottom: 1rem;
+  padding: 0.25rem 0.25rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.clickable {
+  @include noHighlights;
+  @include clickable;
 }
 
 .role__name {

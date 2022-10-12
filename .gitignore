@@ -63,3 +63,4 @@ typings/
 # parceljs
 .cache
 dist
+.parcel-cache

@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { SlidePanel } from './SlidePanel';
-import styles from './styles.scss';
+import * as styles from './styles.module.scss';
 
 const transitioningClassName =
   styles['withslidepanel__container--transitioning'];

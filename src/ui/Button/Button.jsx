@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { Icon } from '../Icons/Icons';
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 
 const Button = ({ className = '', text, icon, onClick }) => (
   <button className={`${styles.button} ${className}`} onClick={onClick}>

@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, Fragment } from 'preact';
 import { Section } from '../../ui/Section/Section';
 import { Profile } from '../Profile/Profile';
 import { Links } from '../Links/Links';
@@ -32,7 +32,7 @@ const AppMainComponent = ({ cvData, slidePanel }) => {
   };
 
   return (
-    <main>
+    <Fragment>
       <Profile {...profile} />
       <Links links={profile} />
       <Section title="Skills">
@@ -54,7 +54,7 @@ const AppMainComponent = ({ cvData, slidePanel }) => {
         <Languages languages={languages} />
       </Section>
       <IconDefs />
-    </main>
+    </Fragment>
   );
 };
 

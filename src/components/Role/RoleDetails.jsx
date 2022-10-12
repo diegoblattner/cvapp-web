@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import styles from './styles.scss';
+import * as styles from './styles.module.scss';
 import { Avatar } from '../../ui/Avatar/Avatar';
 import { getCompany } from '../../services/cv';
 import { Role } from '../Role/Role';

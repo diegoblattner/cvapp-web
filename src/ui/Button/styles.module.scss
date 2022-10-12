@@ -10,8 +10,8 @@
   color: $primaryColor;
   outline: 0;
   text-decoration: none;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  
+  @include clickable;
 }
 
 .button__icon {

@@ -1,9 +1,9 @@
 import { h } from 'preact';
-import { useState, useEffect, useRef } from 'preact/hooks';
+import { useState, useEffect, useRef, useCallback } from 'preact/hooks';
 import { RoleDetails } from '../Role/RoleDetails';
-import styles from './ExperienceDetails.scss';
 import { Button } from '../../ui/Button/Button';
 import { iconsEnum } from '../../ui/Icons/Icons';
+import * as styles from './ExperienceDetails.module.scss';
 
 function getScrollParent(node) {
   if (node === null) {
@@ -20,21 +20,20 @@ const ExperienceDetails = ({ experience, selected }) => {
   const containerRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(selected);
 
-  const goTo = index => {
-    const scrollingParent = getScrollParent(containerRef.current);
-    if (scrollingParent) {
-      scrollingParent.scroll(window.scrollX, 0);
-    }
-    setSelectedIndex(index);
-  };
-
-  // Updates the container height to match the selected role height
   useEffect(() => {
+    // Updates the container height to match the selected role height
     const ul = containerRef.current.querySelector('ul');
     const li = ul.getElementsByClassName(styles.experiencedetails__roles__role)[
       selectedIndex
     ];
-    ul.style.height = `${li.clientHeight}px`;
+
+    const scrollingParent = getScrollParent(containerRef.current);
+    if (scrollingParent) {
+      scrollingParent.scroll({ left: window.scrollX, top: 0, behavior: "smooth" });
+    }
+    setTimeout(() => {
+      ul.style.height = `${li.clientHeight}px`;
+    }, 250);
   }, [selectedIndex]);
 
   const showPrev = selectedIndex > 0;
@@ -67,7 +66,7 @@ const ExperienceDetails = ({ experience, selected }) => {
             className={styles.experiencedetails__prev}
             text="Prev"
             icon={iconsEnum.arrow}
-            onClick={() => goTo(selectedIndex - 1)}
+            onClick={() => setSelectedIndex(selectedIndex - 1)}
           />
         )}
         {showNext && (
@@ -75,7 +74,7 @@ const ExperienceDetails = ({ experience, selected }) => {
             className={styles.experiencedetails__next}
             text="Next"
             icon={iconsEnum.arrow}
-            onClick={() => goTo(selectedIndex + 1)}
+            onClick={() => setSelectedIndex(selectedIndex + 1)}
           />
         )}
       </div>

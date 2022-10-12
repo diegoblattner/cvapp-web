@@ -2,18 +2,18 @@
   "profile": {
     "name": "Diego Blattner",
     "position": "Software Engineer - Front End",
-    "avatar": "https://scontent.fdub3-1.fna.fbcdn.net/v/t1.0-1/p40x40/46806658_1936741216443571_7703200806618529792_n.jpg?_nc_cat=110&_nc_ht=scontent.fdub3-1.fna&oh=8596aa88246ca446faf75093528be1e8&oe=5D176ABB",
-    "email": "diegoblattner@hotmail.com",
+    "avatar": "https://media-exp1.licdn.com/dms/image/D4E35AQE_4TvAJZVdGg/profile-framedphoto-shrink_100_100/0/1665576491513?e=1666202400&v=beta&t=P3JZsolsLqRe1a73-h4z5mUzevmdDkTgCLED-3VdPXo",
+    "email": "diblattner@gmail.com",
     "github": "https://github.com/diegoblattner",
-    "linkedin": "https://www.linkedin.com/in/diego-blattner-225a69a7/",
+    "linkedin": "https://www.linkedin.com/in/diegoblattner/",
     "bio": "A short bio goes here"
   },
   "skills": [
-    "JavaScript",
-    "React/AngularJS",
-    "JS Design Patterns",
+    "TypeScript",
+    "React",
+    "Unit testing",
     "HTML/Accessibility",
-    "Node.js",
+    "Cypress",
     "Agile Methodology",
     "CSS/SASS/BEM",
     "CI/CD",
@@ -156,14 +156,20 @@
     }
   ],
   "languages": [
-    { "name": "English", "level": "Fluent" },
-    { "name": "Portuguese", "level": "Native" }
+    {
+      "name": "English",
+      "level": "Fluent"
+    },
+    {
+      "name": "Portuguese",
+      "level": "Native"
+    }
   ],
   "companies": {
     "CarTrawler": {
       "name": "CarTrawler",
       "longName": "CarTrawler",
-      "avatar": "https://www.cartrawler.com/ct/wp-content/themes/cartrawler2017/assets/img/logo2017.png",
+      "avatar": "https://media-exp1.licdn.com/dms/image/D4E0BAQHoiRrq1p2OAg/company-logo_200_200/0/1657634377437?e=1673481600&v=beta&t=4eec4VYzM4wUkBrWNIV-Oj07Nc8Q6O_Q5_EiMPIfGy4",
       "site": "https://www.cartrawler.com"
     },
     "EMPRO": {

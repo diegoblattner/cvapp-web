@@ -1,18 +1,13 @@
 {
-  "extends": ["airbnb-base", "prettier"],
+  "extends": ["preact", "airbnb-base", "prettier"],
   "env": {
     "browser": true,
     "node": true,
     "jest": true
   },
   "parserOptions": {
-    "ecmaVersion": 8,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
-      "spread": true,
-      "experimentalObjectRestSpread": true
-    }
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
   "rules": {
     "no-unused-vars": [0, { "varsIgnorePattern": "^h$" }],

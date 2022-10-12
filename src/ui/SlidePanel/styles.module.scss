@@ -4,6 +4,9 @@ $animation-duration: 0.5s;
 
 .withslidepanel {
   background: black;
+  @include maxWidthQuery {
+    background: white;
+  }
 }
 
 .withslidepanel__container {
@@ -26,17 +29,25 @@ $animation-duration: 0.5s;
   position: fixed;
   background: white;
   top: 0;
-  left: 0;
-  right: 0;
+  left: auto;
+  right: -110vw;
   bottom: 0;
+  width: 100vw;
   overflow: auto;
-  transform: translateX(110%);
-  transition: transform $animation-duration;
+  transition: right $animation-duration;
   box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
+  @include maxWidthQuery {
+    width: $maxWidth;
+    right: -($maxWidth + 30px);
+  }
+}
+
+.slidepanel__content {
+  @include maxWidthContainer;
 }
 
 .slidepanel--open {
-  transform: translateX(0%);
+  right: 0;
 }
 
 .slidepanel__header {
@@ -58,6 +69,8 @@ $animation-duration: 0.5s;
   float: left;
   font-size: 1.4rem;
   outline: 0;
+
+  @include clickable;
 }
 
 .slidepanel__header__title {

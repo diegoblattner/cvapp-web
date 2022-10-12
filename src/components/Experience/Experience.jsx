@@ -1,11 +1,11 @@
 import { h } from 'preact';
-import { Role } from '../Role/Role';
-import styles from './styles.scss';
+import { RoleClickable } from '../Role/Role';
+import * as styles from './styles.module.scss';
 
 const Experience = ({ experience, onSelectRole }) => (
   <ul className={styles.experience}>
     {experience.map((role, i) => (
-      <Role key={i} {...role} onSelectRole={() => onSelectRole(i)} />
+      <RoleClickable key={i} {...role} onSelectRole={() => onSelectRole(i)} />
     ))}
   </ul>
 );

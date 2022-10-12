@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import styles from './styles';
+import * as styles from './styles.module.scss';
 
 const Avatar = ({ avatar }) => (
   <div
