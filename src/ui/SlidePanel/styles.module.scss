@@ -24,6 +24,15 @@ $animation-duration: 0.5s;
   overflow: hidden;
 }
 
+.slidepanel__overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
 .slidepanel {
   -webkit-overflow-scrolling: touch;
   position: fixed;
@@ -36,14 +45,11 @@ $animation-duration: 0.5s;
   overflow: auto;
   transition: right $animation-duration;
   box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
+  z-index: 1;
   @include maxWidthQuery {
     width: $maxWidth;
-    right: -($maxWidth + 30px);
+    right: -($maxWidth + 60px);
   }
-}
-
-.slidepanel__content {
-  @include maxWidthContainer;
 }
 
 .slidepanel--open {

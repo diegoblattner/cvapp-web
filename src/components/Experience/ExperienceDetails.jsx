@@ -51,10 +51,9 @@ const ExperienceDetails = ({ experience, selected }) => {
       >
         {experience.map((role, index) => (
           <li
+            key={index}
             className={styles.experiencedetails__roles__role}
-            style={{
-              width: `calc(${liWidth}% - 1rem)`,
-            }}
+            style={{ width: `calc(${liWidth}% - 1rem)` }}
           >
             <RoleDetails {...role} key={index} />
           </li>

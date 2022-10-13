@@ -1,5 +1,6 @@
 $primaryColor: #2f344e;
 $blackColor: #000;
+$focusColor: rgb(255, 136, 0);
 $margin: 0.5rem;
 $maxWidth: 1024px;
 
@@ -11,7 +12,7 @@ $maxWidth: 1024px;
 
 @mixin maxWidthContainer {
   @include maxWidthQuery {
-    max-width: 1024px;
+    max-width: $maxWidth;
     margin: 0 auto;
   }
 }
@@ -27,6 +28,7 @@ $maxWidth: 1024px;
 }
 
 @mixin clickable {
+  outline: 0;
   cursor: pointer;
   transition: transform 0.1s ease-in;
   &:hover {
@@ -38,6 +40,7 @@ $maxWidth: 1024px;
   }
 
   &:focus-visible {
-    outline: 2px solid rgb(255, 136, 0);
+    box-shadow: 0px 0px 3px 1px $focusColor inset;
+    border-radius: 2px;
   }
 }

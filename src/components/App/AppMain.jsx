@@ -24,11 +24,9 @@ const AppMainComponent = ({ cvData, slidePanel }) => {
     languages,
   } = cvData;
 
-  const openExperiencePanel = role => {
+  const openExperiencePanel = (role) => {
     const { open } = slidePanel;
-    open(<ExperienceDetails experience={experience} selected={role} />, {
-      title: 'Experience',
-    });
+    open(<ExperienceDetails experience={experience} selected={role} />, { title: 'Experience' });
   };
 
   return (

@@ -1,4 +1,6 @@
 import { h } from 'preact';
+import { useEffect, useRef } from 'preact/hooks';
+import * as focusTrap from 'focus-trap';
 import { Icon, iconsEnum } from '../Icons/Icons';
 import * as styles from './styles.module.scss';
 
@@ -11,9 +13,30 @@ const SlidePanel = ({
   open,
   className = '',
   component,
-}) => (
-  <div className={`${styles.slidepanel} ${className} ${open ? openClass : ''}`}>
-    <div className={styles.slidepanel__content}>
+}) => {
+  const contentRef = useRef();
+
+  useEffect(() => {
+    let trap;
+
+    if (contentRef.current && open) {
+      trap = focusTrap.createFocusTrap(contentRef.current, {
+        clickOutsideDeactivates: true,
+        escapeDeactivates: true,
+        onPostDeactivate: onBackButtonClick,
+      });
+      trap.activate();
+    }
+
+    return () => {
+      if (trap?.active) {
+        trap.deactivate();
+      }
+    };
+  }, [open]);
+
+  return (
+    <div ref={contentRef} className={`${styles.slidepanel} ${className} ${open ? openClass : ''}`}>
       {(backButton || title) && (
         <div className={styles.slidepanel__header}>
           {backButton && (
@@ -29,7 +52,7 @@ const SlidePanel = ({
       )}
       {component}
     </div>
-  </div>
-);
+  );
+};
 
 export { SlidePanel };
