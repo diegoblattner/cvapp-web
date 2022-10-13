@@ -31,8 +31,9 @@ const AppMainComponent = ({ cvData, slidePanel }) => {
 
   return (
     <Fragment>
-      <Profile {...profile} />
-      <Links links={profile} />
+      <Section>
+        <Profile {...profile} />
+      </Section>
       <Section title="Skills">
         <Skills skills={skills} />
       </Section>

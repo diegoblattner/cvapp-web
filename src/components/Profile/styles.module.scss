@@ -1,12 +1,23 @@
+@import '../../_variables';
 $avatarWidth: 3rem;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  @include maxWidthQuery {
+    flex-direction: row;
+  }
+}
 
 .profile {
   padding: 0.8rem;
+  flex-grow: 1;
 }
 
 .profile__avatar {
   float: left;
-  width: $avatarWidth - 1rem;
+  width: $avatarWidth;
+  margin-top: -0.2rem;
   padding-right: 1rem;
   border-radius: 50%;
 }
@@ -25,4 +36,16 @@ $avatarWidth: 3rem;
   line-height: 1.1rem;
   font-weight: 400;
   margin: 0;
+}
+
+.links {
+  display: flex;
+  margin-top: 0.5rem;
+  padding: 0 2rem;
+  @include maxWidthQuery {
+    margin-top: 0;
+    padding: 0;
+    flex-grow: 0.5;
+    justify-content: end;
+  }
 }
