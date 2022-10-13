@@ -2,7 +2,7 @@ import { h } from 'preact';
 import * as styles from './styles.module.scss';
 import { Avatar } from '../../ui/Avatar/Avatar';
 import { getCompany } from '../../services/cv';
-import { Role } from '../Role/Role';
+import { Role } from './Role';
 
 const Project = ({ name, description, tasks }) => (
   <li>
@@ -17,7 +17,7 @@ const Project = ({ name, description, tasks }) => (
   </li>
 );
 
-const RoleDetails = props => {
+const RoleDetails = (props) => {
   const { role, startDate, endDate = 'Now', company, projects } = props;
   const { avatar } = getCompany(company);
   return (

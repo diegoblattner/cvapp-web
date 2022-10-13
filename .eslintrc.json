@@ -1,5 +1,5 @@
 {
-  "extends": ["preact", "airbnb-base", "prettier"],
+  "extends": ["airbnb-base", "plugin:import/react", "preact"],
   "env": {
     "browser": true,
     "node": true,
@@ -12,6 +12,14 @@
   "rules": {
     "no-unused-vars": [0, { "varsIgnorePattern": "^h$" }],
     "import/prefer-default-export": 0,
-    "comma-dangle": "error"
+    "comma-dangle": ["error", "always-multiline"],
+    "object-curly-newline": ["error", { "multiline": true }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js",".jsx"]
+      }
+    }
   }
 }

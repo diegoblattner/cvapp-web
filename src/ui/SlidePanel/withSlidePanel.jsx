@@ -3,8 +3,7 @@ import { useState, useEffect } from 'preact/hooks';
 import { SlidePanel } from './SlidePanel';
 import * as styles from './styles.module.scss';
 
-const transitioningClassName =
-  styles['withslidepanel__container--transitioning'];
+const transitioningClassName = styles['withslidepanel__container--transitioning'];
 const openedClassName = styles['withslidepanel__container--slidepanelon'];
 const animationDuration = 500;
 
@@ -20,8 +19,8 @@ const initialState = () => ({
  * Exposes a 'slidePanel' prop with two methods: 'open' and 'close'
  * @param {Component} WrappedComponent
  */
-const withSlidePanel = WrappedComponent => {
-  const ComponentWithSlidePanel = props => {
+const withSlidePanel = (WrappedComponent) => {
+  const ComponentWithSlidePanel = (props) => {
     const [state, setState] = useState(initialState());
     const [openedClass, setOpenedClass] = useState(null);
 
@@ -60,9 +59,7 @@ const withSlidePanel = WrappedComponent => {
     }, [openedClass]);
 
     const handleBackButtonClick = () => {
-      const {
-        slidePanelProps: { onBackButtonClick },
-      } = state;
+      const {slidePanelProps: { onBackButtonClick }} = state;
       if (onBackButtonClick) {
         onBackButtonClick();
       } else {
@@ -87,6 +84,7 @@ const withSlidePanel = WrappedComponent => {
             }}
           />
         </div>
+        {opened && <div className={styles.slidepanel__overlay} />}
         <SlidePanel
           {...slidePanelProps}
           open={opened}
