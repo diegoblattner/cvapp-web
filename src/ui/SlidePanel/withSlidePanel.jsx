@@ -3,8 +3,6 @@ import { useState, useEffect } from 'preact/hooks';
 import { SlidePanel } from './SlidePanel';
 import * as styles from './styles.module.scss';
 
-const transitioningClassName = styles['withslidepanel__container--transitioning'];
-const openedClassName = styles['withslidepanel__container--slidepanelon'];
 const animationDuration = 500;
 
 const initialState = () => ({
@@ -34,7 +32,7 @@ const withSlidePanel = (WrappedComponent) => {
 
       // sets a timeout to add the auxiliar class after the animation has ocurred
       setTimeout(() => {
-        setOpenedClass(openedClassName);
+        setOpenedClass(styles.withslidepanel__container__slidepanelon);
       }, animationDuration);
     };
 
@@ -73,7 +71,7 @@ const withSlidePanel = (WrappedComponent) => {
       <div className={`${styles.withslidepanel} ${className}`}>
         <div
           className={`${styles.withslidepanel__container} ${
-            opened ? transitioningClassName : ''
+            opened ? styles.withslidepanel__container__transitioning : ''
           } ${openedClass}`}
         >
           <WrappedComponent

@@ -6,7 +6,7 @@ import * as styles from './styles.module.scss';
 const inViewClass = styles['section--in-view'];
 
 const uiGap = 30;
-const elementIsInView = element => {
+const elementIsInView = (element) => {
   const top = element.offsetTop + uiGap;
   return top < window.pageYOffset + window.innerHeight;
 };
@@ -20,7 +20,7 @@ const Section = ({ title, className = '', children }) => {
     const isInview = elementIsInView(containerRef.current);
 
     if (isInview) {
-      setInView(inViewClass);
+      setInView(styles.section__in_view);
     }
 
     return isInview;

@@ -4,8 +4,6 @@ import * as focusTrap from 'focus-trap';
 import { Icon, iconsEnum } from '../Icons/Icons';
 import * as styles from './styles.module.scss';
 
-const openClass = styles['slidepanel--open'];
-
 const SlidePanel = ({
   backButton = true,
   onBackButtonClick,
@@ -36,7 +34,7 @@ const SlidePanel = ({
   }, [open]);
 
   return (
-    <div ref={contentRef} className={`${styles.slidepanel} ${className} ${open ? openClass : ''}`}>
+    <div ref={contentRef} className={`${styles.slidepanel} ${className} ${open ? styles.slidepanel__open : ''}`}>
       {(backButton || title) && (
         <div className={styles.slidepanel__header}>
           {backButton && (

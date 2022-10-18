@@ -1,16 +1,17 @@
+@use 'sass:math';
 @import '../../_variables';
 
 $padding-left: 4.25rem;
 
 .listItem {
   position: relative;
-  padding: $margin/2 $margin/2 $margin;
-  margin-bottom: $margin/2;
+  padding: math.div($margin, 2) math.div($margin, 2) $margin;
+  margin-bottom: math.div($margin, 2);
 }
 
 .listItem__name {
   padding-left: $padding-left;
-  padding-top: $margin/2;
+  padding-top: math.div($margin, 2);
   display: block;
   font-size: 1.2rem;
   line-height: 1.6rem;
