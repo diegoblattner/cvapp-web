@@ -1,13 +1,19 @@
 import { h } from 'preact';
+import { List } from '../../ui/List/List';
+import { ListItem } from '../../ui/ListItem/ListItem';
 
 const Certifications = ({ certifications }) => (
-  <ul>
+  <List>
     {certifications.map(({ name, provider, date }, i) => (
       <li key={i}>
-        <strong>{name}</strong> - {provider} ({date})
+        <ListItem
+          title={name}
+          subtitle={date}
+          company={provider}
+        />
       </li>
     ))}
-  </ul>
+  </List>
 );
 
 export { Certifications };

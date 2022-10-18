@@ -1,0 +1,49 @@
+@import '../../_variables';
+
+$padding-left: 4.25rem;
+
+.listItem {
+  position: relative;
+  padding: $margin/2 $margin/2 $margin;
+  margin-bottom: $margin/2;
+}
+
+.listItem__name {
+  padding-left: $padding-left;
+  padding-top: $margin/2;
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+}
+
+.listItem__company {
+  font-style: italic;
+}
+
+.listItem__subtitle {
+  display: block;
+  padding-left: $padding-left;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.listItem__select {
+  position: absolute;
+  top: calc(50% - 1.25rem);
+  right: -0.25rem;
+  color: $primaryColor;
+  font-size: 2.25rem;
+}
+
+.clickable {
+  border: 0;
+  margin: 0;
+  background: 0;
+  padding: 0;
+  width: 100%;
+  text-align: unset;
+  
+  @include noHighlights;
+  @include clickable;
+}

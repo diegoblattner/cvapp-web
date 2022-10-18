@@ -3,7 +3,7 @@ import { useState, useEffect, useRef, useCallback } from 'preact/hooks';
 import { RoleDetails } from '../Role/RoleDetails';
 import { Button } from '../../ui/Button/Button';
 import { iconsEnum } from '../../ui/Icons/Icons';
-import * as styles from './ExperienceDetails.module.scss';
+import * as styles from './styles.module.scss';
 
 function getScrollParent(node) {
   if (node === null) {
