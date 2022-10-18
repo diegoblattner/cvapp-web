@@ -13,14 +13,18 @@ $animation-duration: 0.5s;
   background: white;
   transform: scale(1);
   transition: transform $animation-duration;
+  padding: 1rem 0 4rem 0;
 }
 
-.withslidepanel__container--transitioning {
+.withslidepanel__container__transitioning {
   transform: scale(0.9);
 }
 
-.withslidepanel__container--slidepanelon {
-  position: fixed;
+.withslidepanel__container__slidepanelon {
+  overflow: hidden;
+}
+
+body:has(.withslidepanel__container__slidepanelon) {
   overflow: hidden;
 }
 
@@ -35,6 +39,7 @@ $animation-duration: 0.5s;
 
 .slidepanel {
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
   position: fixed;
   background: white;
   top: 0;
@@ -46,13 +51,14 @@ $animation-duration: 0.5s;
   transition: right $animation-duration;
   box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
   z-index: 1;
+  padding: 1rem 0 4rem 0;
   @include maxWidthQuery {
     width: $maxWidth;
     right: -($maxWidth + 60px);
   }
 }
 
-.slidepanel--open {
+.slidepanel__open {
   right: 0;
 }
 

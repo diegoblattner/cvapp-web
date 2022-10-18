@@ -1,4 +1,8 @@
 .languages {
   display: flex;
   gap: 4rem;
+
+  > li + li {
+    margin-top: unset;
+  }
 }
