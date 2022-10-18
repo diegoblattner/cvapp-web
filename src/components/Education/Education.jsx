@@ -1,13 +1,20 @@
 import { h } from 'preact';
+import { List } from '../../ui/List/List';
+import { ListItem } from '../../ui/ListItem/ListItem';
 
 const Education = ({ education }) => (
-  <ul>
+  <List>
     {education.map(({ course, institution, period }, i) => (
       <li key={i}>
-        <strong>{course}</strong> - {institution} ({period})
+        <ListItem
+          title={course}
+          subtitle={period}
+          company={institution}
+          showCompanyName
+        />
       </li>
     ))}
-  </ul>
+  </List>
 );
 
 export { Education };

@@ -117,9 +117,8 @@
   ],
   "education": [
     {
-      "institution": "Technology College of São José do Rio Preto – FATEC",
-      "avatar": "",
-      "course": "Technology Degree in Informatics for Business",
+      "institution": "FATEC Rio Preto",
+      "course": "Technology Degree in IT for Business",
       "period": "2007 - 2010"
     }
   ],
@@ -168,21 +167,28 @@
   "companies": {
     "CarTrawler": {
       "name": "CarTrawler",
-      "longName": "CarTrawler",
       "avatar": "https://media-exp1.licdn.com/dms/image/D4E0BAQHoiRrq1p2OAg/company-logo_200_200/0/1657634377437?e=1673481600&v=beta&t=4eec4VYzM4wUkBrWNIV-Oj07Nc8Q6O_Q5_EiMPIfGy4",
       "site": "https://www.cartrawler.com"
     },
     "EMPRO": {
       "name": "EMPRO",
-      "longName": "EMPRO Technology & Information",
       "avatar": "https://www.empro.com.br/images/empro.png",
       "site": "https://www.empro.com.br/"
     },
     "PCA": {
       "name": "PCA",
-      "longName": "PCA Software Engineering",
       "avatar": "https://www.pca.com.br/site/Content/image/logo1-default.png",
       "site": "https://www.pca.com.br/"
+    },
+    "Microsoft": {
+      "name": "Microsoft",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_100_100/0/1618231291419?e=1674086400&v=beta&t=knAYdIU-l3y_5WtdTjCcGlnwF6D-Z_jqEiMFGy-380I",
+      "site": "https://www.microsoft.com"
+    },
+    "FATEC Rio Preto": {
+      "name": "Technology College of São José do Rio Preto – FATEC",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C4D0BAQHEGPSN_BfWoQ/company-logo_100_100/0/1641047967914?e=1674086400&v=beta&t=8ybO-AdTlPfQ-4GJHVy_mqNJU7Mitk6eQ01cyj8EHTM",
+      "site": "https://fatecriopreto.edu.br/"
     }
   }
 }
