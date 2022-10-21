@@ -10,7 +10,7 @@ const Button = ({ className = '', text, icon, onClick }) => (
 );
 
 const Link = ({ className = '', text, icon, href }) => (
-  <a className={`${styles.button} ${className}`} href={href} target="_blank">
+  <a className={`${styles.button} ${className}`} href={href} target="_blank" rel="noreferrer">
     <Icon className={styles.button__icon} src={icon} />
     {text}
   </a>
