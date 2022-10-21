@@ -41,6 +41,7 @@ const SlidePanel = ({
             <button
               className={styles.slidepanel__header__back}
               onClick={onBackButtonClick}
+              aria-label="Back"
             >
               <Icon src={iconsEnum.arrow} />
             </button>

@@ -6,37 +6,28 @@ import { AppLoading } from './AppLoading';
 import { AppError } from './AppError';
 import { AppMain } from './AppMain';
 
-const ui = {
-  loading: 'loading',
-  loaded: 'loaded',
-  error: 'error',
-};
+export const App = ({ initialCvData }) => {
+  const [cvData, setCvData] = useState(initialCvData);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState();
 
-const UIStates = {
-  [ui.loading]() {
-    return <AppLoading />;
-  },
-  [ui.loaded](cvData) {
-    return <AppMain cvData={cvData} />;
-  },
-  [ui.error]() {
-    return <AppError />;
-  },
-};
-
-export const App = () => {
-  const [uiState, setUiState] = useState(ui.loading);
-  const [cvData, setCvData] = useState({});
-
-  useEffect(async () => {
-    const result = await loadCV();
-    setCvData(result);
-    setUiState(result ? ui.loaded : ui.error);
+  useEffect(() => {
+    if (!initialCvData) {
+      loadCV().then((result) => {
+        setCvData(result);
+      }).catch((e) => {
+        setError(e);
+      }).finally(() => {
+        setIsLoading(false);
+      });
+    }
   }, []);
 
   return (
     <main className={styles.main}>
-      {UIStates[uiState](cvData)}
+      {error && <AppError />}
+      {isLoading && <AppLoading />}
+      {!isLoading && !error && cvData && <AppMain cvData={cvData} />}
     </main>
   );
 };

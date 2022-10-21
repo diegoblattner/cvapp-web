@@ -11,7 +11,7 @@ const iconsEnum = {
   arrow: 'arrow',
 };
 
-const iconId = icon => `icon-${icon}`;
+const iconId = (icon) => `icon-${icon}`;
 
 const Icon = ({ src, className = '' }) => (
   <svg className={`${styles.icon} ${className}`}>
