@@ -1,19 +1,19 @@
-import { h } from 'preact';
-import { useEffect, useRef } from 'preact/hooks';
+import { h, createRef } from 'preact';
+import { forwardRef } from 'preact/compat';
+import { useEffect, useMemo } from 'preact/hooks';
 import * as focusTrap from 'focus-trap';
 import { Icon, iconsEnum } from '../Icons/Icons';
 import * as styles from './styles.module.scss';
 
-const SlidePanel = ({
+const SlidePanel = forwardRef(({
   backButton = true,
   onBackButtonClick,
   title,
   open,
   className = '',
   component,
-}) => {
-  const contentRef = useRef();
-
+}, ref) => {
+  const contentRef = useMemo(() => ref ?? createRef(), []);
   useEffect(() => {
     let trap;
 
@@ -52,6 +52,6 @@ const SlidePanel = ({
       {component}
     </div>
   );
-};
+});
 
 export { SlidePanel };

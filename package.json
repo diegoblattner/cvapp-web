@@ -10,6 +10,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "dependencies": {
     "@preact/preset-vite": "^2.4.0",
+    "@preact/signals": "^1.1.2",
     "debounce": "github:diegoblattner/debounce#34c098d9",
     "focus-trap": "^7.0.0",
     "preact": "^10.11.1",
