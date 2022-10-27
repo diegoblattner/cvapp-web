@@ -1,27 +1,27 @@
-.experiencedetails {
+.carousel {
   overflow: hidden;
 }
 
-.experiencedetails__roles {
+.carousel__items {
   overflow: hidden;
   transition: transform 0.5s, height 0.5s;
 }
 
-.experiencedetails__roles__role {
+.carousel__items__item {
   padding: 0 0.5rem;
   float: left;
 }
 
-.experiencedetails__prev {
+.carousel__prev {
   padding: 0.5rem;
   float: left;
 }
 
-.experiencedetails__next {
+.carousel__next {
   padding: 0.5rem;
   float: right;
 }
 
-.experiencedetails__next svg {
+.carousel__next svg {
   transform: rotateY(180deg);
 }

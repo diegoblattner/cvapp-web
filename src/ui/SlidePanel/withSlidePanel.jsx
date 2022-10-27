@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect, useRef } from 'preact/hooks';
 import { SlidePanel } from './SlidePanel';
 import * as styles from './styles.module.scss';
 
@@ -21,6 +21,7 @@ const withSlidePanel = (WrappedComponent) => {
   const ComponentWithSlidePanel = (props) => {
     const [state, setState] = useState(initialState());
     const [openedClass, setOpenedClass] = useState(null);
+    const slidePanelRef = useRef();
 
     const openSlidePanel = (component, slidePanelProps = {}) => {
       setState({
@@ -79,6 +80,8 @@ const withSlidePanel = (WrappedComponent) => {
             slidePanel={{
               open: openSlidePanel,
               close: closeSlidePanel,
+              element: slidePanelRef.current,
+              isOpen: opened,
             }}
           />
         </div>
@@ -88,6 +91,7 @@ const withSlidePanel = (WrappedComponent) => {
           open={opened}
           component={component}
           onBackButtonClick={handleBackButtonClick}
+          ref={slidePanelRef}
         />
       </div>
     );

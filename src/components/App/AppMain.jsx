@@ -1,15 +1,14 @@
 import { h, Fragment } from 'preact';
 import { Section } from '../../ui/Section/Section';
 import { Profile } from '../Profile/Profile';
-import { Links } from '../Links/Links';
 import { Skills } from '../Skills/Skills';
 import { Experience } from '../Experience/Experience';
-import { ExperienceDetails } from '../Experience/ExperienceDetails';
 import { Certifications } from '../Certifications/Certifications';
 import { Education } from '../Education/Education';
 import { Languages } from '../Languages/Languages';
 import { IconDefs } from '../../ui/Icons/Icons';
 import { withSlidePanel } from '../../ui/SlidePanel/withSlidePanel';
+import { useAppMain } from './useAppMain';
 
 /**
  * @param {Object} props cvData + slidePanel (from HOC withSlidePanel)
@@ -24,10 +23,7 @@ const AppMainComponent = ({ cvData, slidePanel }) => {
     languages,
   } = cvData;
 
-  const openExperiencePanel = (role) => {
-    const { open } = slidePanel;
-    open(<ExperienceDetails experience={experience} selected={role} />, { title: 'Experience' });
-  };
+  const { selectRole } = useAppMain(experience, slidePanel);
 
   return (
     <Fragment>
@@ -40,7 +36,7 @@ const AppMainComponent = ({ cvData, slidePanel }) => {
       <Section title="Experience">
         <Experience
           experience={experience}
-          onSelectRole={openExperiencePanel}
+          onSelectRole={selectRole}
         />
       </Section>
       <Section title="Certifications">
