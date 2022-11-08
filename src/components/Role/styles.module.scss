@@ -1,37 +1,25 @@
 @import '../../_variables';
 $padding-left: 4.25rem;
 
+.container {
+  margin-bottom: $margin*4;
+}
+
 .role {
-  position: relative;
-  padding: 0.25rem 0.25rem 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-left: $margin;
+  margin-top: $margin*2;
+  margin-bottom: $margin*6;
 }
 
-.clickable {
-  @include noHighlights;
-  @include clickable;
-}
-
-.role__name {
-  padding-left: $padding-left;
-  padding-top: 0.25rem;
-  display: block;
+.heading {
+  font-weight: 600;
   font-size: 1.2rem;
-  line-height: 1.6rem;
-  font-weight: 500;
+  margin-top: $margin * 4;
 }
 
-.role__period {
-  display: block;
-  padding-left: $padding-left;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.role__select {
-  position: absolute;
-  top: calc(50% - 1.25rem);
-  right: -0.25rem;
-  color: $primaryColor;
-  font-size: 2.25rem;
+.paragraph {
+  font-size: $fontSize;
+  line-height: 1.4rem;
+  text-align: justify;
+  margin: $margin 0;
 }
