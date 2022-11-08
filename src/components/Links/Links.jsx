@@ -4,7 +4,7 @@ import { iconsEnum } from '../../ui/Icons/Icons';
 import * as styles from './styles.module.scss';
 
 const Links = ({ links }) => {
-  const { github, linkedin, email } = links;
+  const { github, linkedin, email, cvLink } = links;
 
   return (
     <nav className={styles.links}>
@@ -26,10 +26,11 @@ const Links = ({ links }) => {
         icon={iconsEnum.email}
         href={`mailto:${email}`}
       />
-      <Button
+      <Link
         className={styles.links__button}
-        text={'More'}
-        icon={iconsEnum.plus}
+        text={'Doc'}
+        icon={iconsEnum.doc}
+        href={cvLink}
       />
     </nav>
   );
