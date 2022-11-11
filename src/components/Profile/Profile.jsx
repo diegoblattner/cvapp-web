@@ -8,7 +8,7 @@ const Profile = (profileProps) => {
   return (
     <header className={styles.header}>
       <div className={styles.profile}>
-        <img className={styles.profile__avatar} src={avatar} alt={name} />
+        <img className={styles.profile__avatar} src={avatar} alt={name} width="48" height="48" />
         <h1 className={styles.profile__name}>{name}</h1>
         <h2 className={styles.profile__position}>{position}</h2>
       </div>
