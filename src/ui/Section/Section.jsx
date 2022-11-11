@@ -3,8 +3,6 @@ import debounce from 'debounce';
 import { useState, useEffect, useRef } from 'preact/hooks';
 import * as styles from './styles.module.scss';
 
-const inViewClass = styles['section--in-view'];
-
 const uiGap = 30;
 const elementIsInView = (element) => {
   const top = element.offsetTop + uiGap;

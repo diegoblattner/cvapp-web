@@ -9,6 +9,7 @@ import { Languages } from '../Languages/Languages';
 import { IconDefs } from '../../ui/Icons/Icons';
 import { withSlidePanel } from '../../ui/SlidePanel/withSlidePanel';
 import { useAppMain } from './useAppMain';
+import { Footer } from '../Footer/Footer';
 
 /**
  * @param {Object} props cvData + slidePanel (from HOC withSlidePanel)
@@ -47,6 +48,9 @@ const AppMainComponent = ({ cvData, slidePanel }) => {
       </Section>
       <Section title="Languages">
         <Languages languages={languages} />
+      </Section>
+      <Section title="Disclaimer">
+        <Footer />
       </Section>
       <IconDefs />
     </Fragment>
