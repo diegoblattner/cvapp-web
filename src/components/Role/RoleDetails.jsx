@@ -7,12 +7,16 @@ const Project = ({ name, description, tasks }) => (
   <li>
     {name && <h4 className={styles.heading}>{name}</h4>}
     {description && <p className={styles.paragraph}>{description}</p>}
-    <h4 className={styles.heading}>Tasks</h4>
-    <List>
-      {tasks.map((task, index) => (
-        <li key={index} className={styles.paragraph}>{task}</li>
-      ))}
-    </List>
+    {tasks?.length > 0 && (
+      <>
+        <h4 className={styles.heading}>Tasks</h4>
+        <List>
+          {tasks.map((task, index) => (
+            <li key={index} className={styles.paragraph}>{task}</li>
+          ))}
+        </List>
+      </>
+    )}
   </li>
 );
 
