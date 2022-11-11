@@ -1,0 +1,8 @@
+@import '../../_variables';
+
+.li {
+  text-align: justify;
+  & + & {
+    margin-top: $margin*3;
+  }
+}
