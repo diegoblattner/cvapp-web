@@ -1,9 +1,10 @@
 import { h, createRef } from 'preact';
 import { forwardRef } from 'preact/compat';
-import { useEffect, useMemo } from 'preact/hooks';
-import * as focusTrap from 'focus-trap';
+import { useMemo } from 'preact/hooks';
 import { Icon, iconsEnum } from '../Icons/Icons';
 import * as styles from './styles.module.scss';
+import { useInvisibleOnResize } from './useInvisibleOnResize';
+import { useFocusTrap } from './useFocusTrap';
 
 const SlidePanel = forwardRef(({
   backButton = true,
@@ -14,24 +15,8 @@ const SlidePanel = forwardRef(({
   component,
 }, ref) => {
   const contentRef = useMemo(() => ref ?? createRef(), []);
-  useEffect(() => {
-    let trap;
-
-    if (contentRef.current && open) {
-      trap = focusTrap.createFocusTrap(contentRef.current, {
-        clickOutsideDeactivates: true,
-        escapeDeactivates: true,
-        onPostDeactivate: onBackButtonClick,
-      });
-      trap.activate();
-    }
-
-    return () => {
-      if (trap?.active) {
-        trap.deactivate();
-      }
-    };
-  }, [open]);
+  useInvisibleOnResize(contentRef);
+  useFocusTrap(ref, open, onBackButtonClick);
 
   return (
     <div ref={contentRef} className={`${styles.slidepanel} ${className} ${open ? styles.slidepanel__open : ''}`}>

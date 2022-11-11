@@ -22,6 +22,30 @@
   ],
   "experience": [
     {
+      "role": "Front End Developer",
+      "startDate": "July 2021",
+      "endDate": "July 2022",
+      "company": "Hertz",
+      "projects": [
+        {
+          "name": "Hertz International",
+          "description": "Built a new car hire reservation widget using micro front-ends, a CMS and a component library."
+        }
+      ]
+    },
+    {
+      "role": "Front End Techlead",
+      "startDate": "March 2019",
+      "endDate": "June 2021",
+      "company": "Mi9 Retail",
+      "projects": [
+        {
+          "name": "Admin Panel",
+          "description": "Built and maintained a Typescript React SPA. The application consist of several modules that allow mi9’s clients to set up and manage all branches of an online groceries platform. The clients can configure product search results, set up physical and online stores, manage orders from placed to fulfilled stages, create recipes, recommendations, manage customers and so on."
+        }
+      ]
+    },
+    {
       "role": "Engineering Manager",
       "startDate": "April 2017",
       "endDate": "Aug 2018",
@@ -55,8 +79,8 @@
     },
     {
       "role": "Javascript Developer",
-      "startDate": "April 2017",
-      "endDate": "Aug 2018",
+      "startDate": "September 2015",
+      "endDate": "March 2017",
       "company": "CarTrawler",
       "projects": [
         {
@@ -190,6 +214,16 @@
       "name": "Technology College of São José do Rio Preto – FATEC",
       "avatar": "https://media-exp1.licdn.com/dms/image/C4D0BAQHEGPSN_BfWoQ/company-logo_100_100/0/1641047967914?e=1674086400&v=beta&t=8ybO-AdTlPfQ-4GJHVy_mqNJU7Mitk6eQ01cyj8EHTM",
       "site": "https://fatecriopreto.edu.br/"
+    },
+    "Mi9 Retail": {
+      "name": "Mi9 Retail",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C560BAQHZ07sGh_BaeQ/company-logo_100_100/0/1547655965064?e=1675900800&v=beta&t=KHCs_nJqyuf3vUmNXZyyLRSYl5n7kV3G1OvUqc3iyUs",
+      "site": "https://mi9retail.com/"
+    },
+    "Hertz": {
+      "name": "Hertz",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C510BAQGFsJHoWqZ7Kg/company-logo_100_100/0/1519855888383?e=1675900800&v=beta&t=xkLm3dZWR3ebBzD7RvodzwYrg11B8FDSJngA-9CfGsk",
+      "site": "https://www.hertz.com"
     }
   }
 }

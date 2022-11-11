@@ -93,3 +93,7 @@ body:has(.withslidepanel__container__slidepanelon) {
   line-height: 1.5rem;
   font-weight: 500;
 }
+
+.hidden {
+  visibility: hidden;
+}
