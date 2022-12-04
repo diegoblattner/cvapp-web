@@ -1,63 +1,28 @@
-import { ComponentChildren, h } from 'preact';
-import debounce from 'debounce';
-import { useState, useEffect, useRef } from 'preact/hooks';
+import { ComponentChildren } from 'preact';
+import { useRef } from 'preact/hooks';
 import styles from './styles.module.scss';
-
-const uiGap = 30;
-const elementIsInView = (element: HTMLElement) => {
-  const top = element.offsetTop + uiGap;
-  return top < window.pageYOffset + window.innerHeight;
-};
+import { useAnimateInView } from './useAnimateInView';
 
 type SectionProps = {
   title?: string;
   className?: string;
   children?: ComponentChildren;
+  startVisible?: boolean;
 }
 
-type Callback = () => void;
-
-const Section = ({ title, className = '', children }: SectionProps) => {
+const Section = ({
+  title,
+  className = '',
+  children,
+  startVisible,
+}: SectionProps) => {
   const containerRef = useRef<HTMLElement>(null);
-  const [inView, setInView] = useState('');
-  const onScroll = useRef<Callback>();
-
-  const setInViewState = () => {
-    const isInview = elementIsInView(containerRef.current!);
-
-    if (isInview) {
-      setInView(styles.section__in_view);
-    }
-
-    return isInview;
-  };
-
-  useEffect(() => {
-    if (!setInViewState()) {
-      onScroll.current = debounce(
-        () => {
-          if (setInViewState()) {
-            document.removeEventListener('scroll', onScroll.current!);
-          }
-        },
-        100,
-        200,
-      );
-      document.addEventListener('scroll', onScroll.current);
-    }
-
-    // on unmount
-    return () => {
-      if (onScroll.current) {
-        document.removeEventListener('scroll', onScroll.current);
-      }
-    };
-  }, []);
+  const inViewClass = useAnimateInView(containerRef, styles.section__in_view, startVisible);
 
   return (
     <section
       ref={containerRef}
-      className={`${styles.section} ${className} ${inView}`}
+      className={`${styles.section} ${className} ${inViewClass}`}
     >
       {title && (
         <div className={styles.section__ruler}>
