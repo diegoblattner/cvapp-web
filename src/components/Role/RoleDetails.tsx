@@ -1,13 +1,18 @@
 import { h } from 'preact';
-import * as styles from './styles.module.scss';
-import { List } from '../../ui/List/List';
+import { memo } from 'preact/compat';
+import { List } from '@ui/List/List';
 import { Role } from './Role';
+import { Experience } from '../../types';
+import styles from './styles.module.scss';
 
-const Project = ({ name, description, tasks }) => (
+type Unarray<T> = T extends Array<infer U> ? U : T;
+type RoleDetailsProps = Experience;
+
+const Project = ({ name, description, tasks }: Unarray<RoleDetailsProps["projects"]>) => (
   <li>
     {name && <h4 className={styles.heading}>{name}</h4>}
     {description && <p className={styles.paragraph}>{description}</p>}
-    {tasks?.length > 0 && (
+    {tasks && tasks.length > 0 && (
       <>
         <h4 className={styles.heading}>Tasks</h4>
         <List>
@@ -20,7 +25,7 @@ const Project = ({ name, description, tasks }) => (
   </li>
 );
 
-const RoleDetails = (props) => {
+const RoleDetails = memo((props: RoleDetailsProps) => {
   const { projects } = props;
 
   return (
@@ -33,6 +38,6 @@ const RoleDetails = (props) => {
       </List>
     </div>
   );
-};
+});
 
 export { RoleDetails };

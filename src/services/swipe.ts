@@ -1,20 +1,27 @@
 const maxSwipeDuration = 800;
 const minSwipeRatio = 20;
 
-export const onSwipe = (element, { left, right, up, down }) => {
-  let startTime;
+type Handlers = {
+  left?: () => void;
+  right?: () => void;
+  up?: () => void;
+  down?: () => void;
+}
+
+export const onSwipe = (element: HTMLElement, { left, right, up, down }: Handlers) => {
+  let startTime: number;
 
   // Swipe Up / Down / Left / Right
-  let initialX = null;
-  let initialY = null;
+  let initialX: number | null = null;
+  let initialY: number | null = null;
 
-  function startTouch(e) {
+  function startTouch(e: TouchEvent) {
     startTime = Date.now();
     initialX = e.touches[0].clientX;
     initialY = e.touches[0].clientY;
   }
 
-  function endTouch(e) {
+  function endTouch(e: TouchEvent) {
     if (initialX === null) {
       return;
     }
@@ -38,26 +45,26 @@ export const onSwipe = (element, { left, right, up, down }) => {
     if (deltaX > deltaY) {
       if (deltaX < minSwipeRatio) return;
 
-      if (diffX > 0 && left) {
+      if (diffX > 0) {
         // swiped left
-        left();
+        left?.();
       }
 
-      if (diffX < 0 && right) {
+      if (diffX < 0) {
         // swiped right
-        right();
+        right?.();
       }
     } else {
       if (deltaY < minSwipeRatio) return;
 
-      if (diffY > 0 && up) {
+      if (diffY > 0) {
         // swiped up
-        up();
+        up?.();
       }
 
-      if (diffY < 0 && down) {
+      if (diffY < 0) {
         // swiped down
-        down();
+        down?.();
       }
     }
 

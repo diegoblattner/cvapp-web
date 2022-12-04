@@ -1,21 +1,29 @@
-import { h } from 'preact';
+import { ComponentChildren, h } from 'preact';
 import debounce from 'debounce';
 import { useState, useEffect, useRef } from 'preact/hooks';
-import * as styles from './styles.module.scss';
+import styles from './styles.module.scss';
 
 const uiGap = 30;
-const elementIsInView = (element) => {
+const elementIsInView = (element: HTMLElement) => {
   const top = element.offsetTop + uiGap;
   return top < window.pageYOffset + window.innerHeight;
 };
 
-const Section = ({ title, className = '', children }) => {
-  const containerRef = useRef(null);
+type SectionProps = {
+  title?: string;
+  className?: string;
+  children?: ComponentChildren;
+}
+
+type Callback = () => void;
+
+const Section = ({ title, className = '', children }: SectionProps) => {
+  const containerRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState('');
-  const onScroll = useRef(null);
+  const onScroll = useRef<Callback>();
 
   const setInViewState = () => {
-    const isInview = elementIsInView(containerRef.current);
+    const isInview = elementIsInView(containerRef.current!);
 
     if (isInview) {
       setInView(styles.section__in_view);
@@ -29,7 +37,7 @@ const Section = ({ title, className = '', children }) => {
       onScroll.current = debounce(
         () => {
           if (setInViewState()) {
-            document.removeEventListener('scroll', onScroll.current);
+            document.removeEventListener('scroll', onScroll.current!);
           }
         },
         100,
@@ -52,7 +60,7 @@ const Section = ({ title, className = '', children }) => {
       className={`${styles.section} ${className} ${inView}`}
     >
       {title && (
-        <div class={styles.section__ruler}>
+        <div className={styles.section__ruler}>
           <h3 className={styles.section__title}>{title}</h3>
         </div>
       )}

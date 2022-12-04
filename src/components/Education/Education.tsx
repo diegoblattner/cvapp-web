@@ -1,12 +1,13 @@
 import { h } from 'preact';
-import { getCompany } from '../../services/cv';
-import { List } from '../../ui/List/List';
-import { ListItem } from '../../ui/ListItem/ListItem';
+import type { CVData } from '@types';
+import { getCompany } from '@services/cv';
+import { List } from '@ui/List/List';
+import { ListItem } from '@ui/ListItem/ListItem';
 
-const Education = ({ education }) => (
+const Education = ({ education }: Pick<CVData, "education">) => (
   <List>
     {education.map(({ course, institution, period }, i) => {
-      const { avatar, name } = getCompany(institution);
+      const { avatar, name } = getCompany(institution)!;
       return (
         <li key={i}>
           <ListItem

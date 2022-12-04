@@ -1,7 +1,11 @@
 import { h } from 'preact';
-import * as styles from './styles.module.scss';
+import styles from './styles.module.scss';
 
-const Avatar = ({ avatar }) => (
+type AvatarProps = {
+  avatar: string;
+}
+
+const Avatar = ({ avatar }: AvatarProps) => (
   <div
     className={styles.avatar}
     style={{ backgroundImage: `url(${avatar})` }}

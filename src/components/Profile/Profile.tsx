@@ -1,8 +1,9 @@
+import type { Profile as ProfileProps } from '@types';
 import { h } from 'preact';
 import { Links } from '../Links/Links';
-import * as styles from './styles.module.scss';
+import styles from './styles.module.scss';
 
-const Profile = (profileProps) => {
+const Profile = (profileProps: ProfileProps) => {
   const { avatar, name, position } = profileProps;
 
   return (
@@ -13,7 +14,7 @@ const Profile = (profileProps) => {
         <h2 className={styles.profile__position}>{position}</h2>
       </div>
       <div className={styles.links}>
-        <Links links={profileProps} />
+        <Links {...profileProps} />
       </div>
     </header>
   );

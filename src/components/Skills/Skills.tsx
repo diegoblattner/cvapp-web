@@ -1,7 +1,12 @@
 import { h } from 'preact';
-import * as styles from './styles.module.scss';
+import type { CVData } from '@types';
+import styles from './styles.module.scss';
 
-const Skills = ({ skills }) => (
+type SkillsProp = {
+  skills: CVData["skills"];
+};
+
+const Skills = ({ skills }: SkillsProp) => (
   <div className={styles.skills}>
     <ul className={styles.skills__list}>
       {skills.map((skill, i) => (

@@ -1,6 +1,10 @@
 import { h } from 'preact';
 import { useEffect } from 'preact/hooks';
 import { useSignalEffect } from '@preact/signals';
+import { onSwipe } from '@services/swipe';
+import type { Experience } from '@types';
+import type { SlidePanelProps } from '@ui/SlidePanel/SlidePanel';
+import { InnerSlidePanelProps } from '@ui/SlidePanel/withSlidePanel';
 import { ExperienceDetails } from '../Experience/ExperienceDetails';
 import {
   selectedRoleIndex,
@@ -8,9 +12,9 @@ import {
   setSelectedRoleIndex,
   setRolesLength,
 } from './state';
-import { onSwipe } from '../../services/swipe';
 
-export const useAppMain = (experience, slidePanel) => {
+
+export const useAppMain = (experience: Experience[], slidePanel: InnerSlidePanelProps) => {
   const { open, isOpen, close, element } = slidePanel;
 
   setRolesLength(experience?.length ?? 0);
@@ -18,7 +22,7 @@ export const useAppMain = (experience, slidePanel) => {
   useSignalEffect(() => {
     if (isRoleSelected.value) {
       if (!isOpen) {
-        open(<ExperienceDetails roles={experience} />, { title: 'Experience' });
+        open?.(<ExperienceDetails roles={experience} />, { title: 'Experience' });
       }
     } else if (isOpen) {
       close();
@@ -39,7 +43,7 @@ export const useAppMain = (experience, slidePanel) => {
     return undefined;
   }, [isOpen, element]);
 
-  const selectRole = (role) => {
+  const selectRole = (role: Experience) => {
     setSelectedRoleIndex(experience.indexOf(role));
   };
 

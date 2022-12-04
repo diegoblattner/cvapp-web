@@ -1,10 +1,11 @@
+import type { Profile } from '@types';
 import { h } from 'preact';
-import { Button, Link } from '../../ui/Button/Button';
-import { iconsEnum } from '../../ui/Icons/Icons';
-import * as styles from './styles.module.scss';
+import { Link } from '@ui/Button/Button';
+import { iconsEnum } from '@ui/Icons/Icons';
+import styles from './styles.module.scss';
 
-const Links = ({ links }) => {
-  const { github, linkedin, email, cvLink } = links;
+const Links = (profile: Profile) => {
+  const { github, linkedin, email, cvLink } = profile;
 
   return (
     <nav className={styles.links}>

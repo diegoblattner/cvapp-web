@@ -1,11 +1,11 @@
-import { h } from 'preact';
+import { ComponentChildren, h } from 'preact';
 import { useState, useEffect, useRef } from 'preact/hooks';
 import { onSwipe } from '../../services/swipe';
 import { Button } from '../Button/Button';
 import { iconsEnum } from '../Icons/Icons';
-import * as styles from './styles.module.scss';
+import styles from './styles.module.scss';
 
-function getScrollParent(node) {
+function getScrollParent(node: HTMLElement | null): HTMLElement | null {
   if (node === null) {
     return null;
   }
@@ -13,8 +13,18 @@ function getScrollParent(node) {
   if (node.scrollHeight > node.clientHeight) {
     return node;
   }
-  return getScrollParent(node.parentNode);
+  return getScrollParent(node.parentElement);
 }
+
+type CarouselProps = {
+  className?: string;
+  children: ComponentChildren[];
+  currentIndex: number;
+  onChange?: (newIndex: number) => void;
+  nextLabel?: string;
+  prevLabel?: string;
+  swipeable?: boolean;
+};
 
 const Carousel = ({
   className = "",
@@ -24,8 +34,8 @@ const Carousel = ({
   nextLabel = "Next",
   prevLabel = "Prev",
   swipeable = false,
-}) => {
-  const containerRef = useRef(null);
+}: CarouselProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = useState(currentIndex);
 
   useEffect(() => {
@@ -34,7 +44,7 @@ const Carousel = ({
 
   useEffect(() => {
     // Updates the container height to match the selected item height
-    const ul = containerRef.current.querySelector('ul');
+    const ul = containerRef.current!.querySelector('ul')!;
     const li = ul.getElementsByClassName(styles.carousel__items__item)[
       selectedIndex
     ];
@@ -50,14 +60,14 @@ const Carousel = ({
     }, 250);
   }, [selectedIndex]);
 
-  const goTo = (increment) => {
+  const goTo = (increment: number) => {
     onChange?.((selectedIndex + increment));
     setSelectedIndex((prev) => prev + increment);
   };
 
   useEffect(() => {
     if (swipeable) {
-      const cleanup = onSwipe(containerRef.current, {
+      const cleanup = onSwipe(containerRef.current!, {
         left: () => goTo(1),
         right: () => goTo(-1),
       });

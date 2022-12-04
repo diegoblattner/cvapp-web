@@ -1,6 +1,6 @@
-import { Link } from "../../ui/Button/Button";
-import { List } from "../../ui/List/List";
-import * as styles from "./styles.module.scss";
+import { Link } from "@ui/Button/Button";
+import { List } from "@ui/List/List";
+import styles from "./styles.module.scss";
 
 const Footer = () => (
   <footer>

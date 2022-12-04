@@ -1,20 +1,25 @@
 import { h } from 'preact';
-import * as styles from './styles.module.scss';
+import styles from './styles.module.scss';
 
-const iconsEnum = {
-  github: 'github',
-  linkedin: 'linkedin',
-  email: 'email',
-  plus: 'plus',
-  newTab: 'new-tab',
-  chevron: 'chevron',
-  arrow: 'arrow',
-  doc: 'doc',
+enum iconsEnum {
+  github = 'github',
+  linkedin = 'linkedin',
+  email = 'email',
+  plus = 'plus',
+  newTab = 'new-tab',
+  chevron = 'chevron',
+  arrow = 'arrow',
+  doc = 'doc',
 };
 
-const iconId = (icon) => `icon-${icon}`;
+const iconId = (icon: iconsEnum) => `icon-${icon}`;
 
-const Icon = ({ src, className = '' }) => (
+type IconProps = {
+  src: iconsEnum;
+  className?: string;
+};
+
+const Icon = ({ src, className = '' }: IconProps) => (
   <svg className={`${styles.icon} ${className}`}>
     <use xlinkHref={`#${iconId(src)}`} />
   </svg>

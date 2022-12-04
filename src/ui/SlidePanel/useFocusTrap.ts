@@ -1,9 +1,10 @@
 import { createFocusTrap } from "focus-trap";
+import { RefObject } from "preact";
 import { useEffect } from "preact/hooks";
 
-export const useFocusTrap = (ref, open, onBackButtonClick) => {
+export const useFocusTrap = (ref: RefObject<HTMLElement>, open: boolean, onBackButtonClick: () => void) => {
   useEffect(() => {
-    let trap;
+    let trap: ReturnType<typeof createFocusTrap>;
 
     if (ref.current && open) {
       trap = createFocusTrap(ref.current, {

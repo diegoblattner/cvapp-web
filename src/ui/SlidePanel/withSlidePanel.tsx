@@ -1,11 +1,30 @@
-import { h } from 'preact';
+import { ComponentChild, ComponentChildren, ComponentType, h, RefObject } from 'preact';
 import { useState, useEffect, useRef } from 'preact/hooks';
-import { SlidePanel } from './SlidePanel';
-import * as styles from './styles.module.scss';
+import { SlidePanel, SlidePanelProps } from './SlidePanel';
+import styles from './styles.module.scss';
 
 const animationDuration = 500;
 
-const initialState = () => ({
+export type InnerSlidePanelProps = {
+  open: (component: ComponentChildren, slidePanelProps: Partial<SlidePanelProps>) => void;
+  close: () => void;
+  element?: HTMLElement;
+  isOpen: boolean;
+};
+
+export type WithSlidePanelProps<P> = P &{
+  slidePanel: InnerSlidePanelProps;
+};
+
+type State = {
+  className?: string;
+  opened: boolean;
+  component: ComponentChildren,
+  scrollPosition: [number, number] | null,
+  slidePanelProps: Partial<SlidePanelProps>,
+};
+
+const initialState = (): State => ({
   opened: false,
   component: null,
   scrollPosition: null,
@@ -17,13 +36,13 @@ const initialState = () => ({
  * Exposes a 'slidePanel' prop with two methods: 'open' and 'close'
  * @param {Component} WrappedComponent
  */
-const withSlidePanel = (WrappedComponent) => {
-  const ComponentWithSlidePanel = (props) => {
+const withSlidePanel = <P extends Record<string, unknown>>(WrappedComponent: ComponentType<WithSlidePanelProps<P>>) => {
+  const ComponentWithSlidePanel = (props: P) => {
     const [state, setState] = useState(initialState());
-    const [openedClass, setOpenedClass] = useState(null);
-    const slidePanelRef = useRef();
+    const [openedClass, setOpenedClass] = useState<string | null>(null);
+    const slidePanelRef = useRef<HTMLElement>();
 
-    const openSlidePanel = (component, slidePanelProps = {}) => {
+    const openSlidePanel = (component: ComponentChild, slidePanelProps = {}) => {
       setState({
         scrollPosition: [window.scrollX, window.scrollY],
         opened: true,
@@ -73,7 +92,7 @@ const withSlidePanel = (WrappedComponent) => {
         <div
           className={`${styles.withslidepanel__container} ${
             opened ? styles.withslidepanel__container__transitioning : ''
-          } ${openedClass}`}
+          } ${openedClass ?? ''}`}
         >
           <WrappedComponent
             {...props}
@@ -91,7 +110,7 @@ const withSlidePanel = (WrappedComponent) => {
           open={opened}
           component={component}
           onBackButtonClick={handleBackButtonClick}
-          ref={slidePanelRef}
+          ref={slidePanelRef as RefObject<HTMLElement>}
         />
       </div>
     );

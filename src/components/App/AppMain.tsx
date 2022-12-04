@@ -1,5 +1,7 @@
 import { h, Fragment } from 'preact';
-import { Section } from '../../ui/Section/Section';
+import { Section } from '@ui/Section/Section';
+import { withSlidePanel, WithSlidePanelProps } from '@ui/SlidePanel/withSlidePanel';
+import type { CVData } from '@types';
 import { Profile } from '../Profile/Profile';
 import { Skills } from '../Skills/Skills';
 import { Experience } from '../Experience/Experience';
@@ -7,14 +9,17 @@ import { Certifications } from '../Certifications/Certifications';
 import { Education } from '../Education/Education';
 import { Languages } from '../Languages/Languages';
 import { IconDefs } from '../../ui/Icons/Icons';
-import { withSlidePanel } from '../../ui/SlidePanel/withSlidePanel';
 import { useAppMain } from './useAppMain';
 import { Footer } from '../Footer/Footer';
+
+type AppMainComponentProps = WithSlidePanelProps<{
+  cvData: CVData;
+}>;
 
 /**
  * @param {Object} props cvData + slidePanel (from HOC withSlidePanel)
  */
-const AppMainComponent = ({ cvData, slidePanel }) => {
+const AppMainComponent = ({ cvData, slidePanel }: AppMainComponentProps) => {
   const {
     profile,
     skills,
