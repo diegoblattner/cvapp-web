@@ -33,13 +33,13 @@ const AppMainComponent = ({ cvData, slidePanel }: AppMainComponentProps) => {
 
   return (
     <Fragment>
-      <Section>
+      <Section startVisible>
         <Profile {...profile} />
-      </Section>
-      <Section title="Skills">
+      </Section >
+      <Section title="Skills" startVisible>
         <Skills skills={skills} />
       </Section>
-      <Section title="Experience">
+      <Section title="Experience" startVisible>
         <Experience
           experience={experience}
           onSelectRole={selectRole}

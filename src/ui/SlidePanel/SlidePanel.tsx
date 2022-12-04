@@ -1,6 +1,6 @@
-import { h, createRef, Ref, ComponentChildren } from 'preact';
-import { forwardRef } from 'preact/compat';
+import { h, createRef, ComponentChildren, RefObject } from 'preact';
 import { useMemo } from 'preact/hooks';
+import { forwardRef } from 'preact/compat';
 import { Icon, iconsEnum } from '../Icons/Icons';
 import styles from './styles.module.scss';
 import { useInvisibleOnResize } from './useInvisibleOnResize';
@@ -23,12 +23,12 @@ const SlidePanel = forwardRef<HTMLElement, SlidePanelProps>(({
   className = '',
   component,
 }, ref) => {
-  const contentRef = useMemo(() => ref ?? createRef(), []) as Ref<HTMLElement>;
+  const contentRef = useMemo(() => ref ?? createRef(), []) as RefObject<HTMLElement>;
   useInvisibleOnResize(contentRef);
-  useFocusTrap(ref, open, onBackButtonClick);
+  useFocusTrap(contentRef, open, onBackButtonClick);
 
   return (
-    <div ref={contentRef as Ref<HTMLDivElement>} className={`${styles.slidepanel} ${className} ${open ? styles.slidepanel__open : ''}`}>
+    <div ref={contentRef as RefObject<HTMLDivElement>} className={`${styles.slidepanel} ${className} ${open ? styles.slidepanel__open : ''}`}>
       {(backButton || title) && (
         <div className={styles.slidepanel__header}>
           {backButton && (
