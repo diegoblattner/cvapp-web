@@ -5,6 +5,7 @@
   line-height: 1.6rem;
   opacity: 0;
   transform: translateY(2rem);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .section__ruler {
@@ -21,15 +22,6 @@
 }
 
 .section__in_view {
-  animation-name: popUp;
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-
-@keyframes popUp {
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 1;
+  transform: translateY(0);
 }
