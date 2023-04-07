@@ -11,7 +11,7 @@
   "dependencies": {
     "@preact/preset-vite": "^2.5.0",
     "@preact/signals": "^1.1.3",
-    "debounce": "github:diegoblattner/debounce#3cf05ce4",
+    "debounce": "github:diegoblattner/debounce#master",
     "focus-trap": "^7.4.0",
     "preact": "^10.13.2",
     "vite": "^4.2.1"
