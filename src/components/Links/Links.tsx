@@ -17,7 +17,7 @@ const Links = (profile: Profile) => {
       />
       <Link
         className={styles.links__button}
-        text={'Linkedin'}
+        text={'LinkedIn'}
         icon={iconsEnum.linkedin}
         href={linkedin}
       />
