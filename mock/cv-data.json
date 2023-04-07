@@ -2,7 +2,7 @@
   "profile": {
     "name": "Diego Blattner",
     "position": "Software Engineer - Front End",
-    "avatar": "https://media-exp1.licdn.com/dms/image/D4E35AQE_4TvAJZVdGg/profile-framedphoto-shrink_400_400/0/1665576491513?e=1668517200&v=beta&t=dgfpqb7STkfi0z8jWBoR-087sQOiADVNKp6g76_2rgI",
+    "avatar": "/assets/profile.jpg",
     "email": "diblattner@gmail.com",
     "github": "https://github.com/diegoblattner",
     "linkedin": "https://www.linkedin.com/in/diegoblattner/",
@@ -21,6 +21,18 @@
     "People Management"
   ],
   "experience": [
+    {
+      "role": "Front End Developer",
+      "startDate": "November 2022",
+      "endDate": "Present",
+      "company": "MasterCard",
+      "projects": [
+        {
+          "name": "CypherTrace Sentry",
+          "description": "Building and maintaining frontend applications for the crypto space."
+        }
+      ]
+    },
     {
       "role": "Front End Developer",
       "startDate": "July 2021",
@@ -192,38 +204,43 @@
   "companies": {
     "CarTrawler": {
       "name": "CarTrawler",
-      "avatar": "https://media-exp1.licdn.com/dms/image/D4E0BAQHoiRrq1p2OAg/company-logo_200_200/0/1657634377437?e=1673481600&v=beta&t=4eec4VYzM4wUkBrWNIV-Oj07Nc8Q6O_Q5_EiMPIfGy4",
+      "avatar": "/assets/ct.jpg",
       "site": "https://www.cartrawler.com"
     },
     "EMPRO": {
       "name": "EMPRO",
-      "avatar": "https://www.empro.com.br/images/empro.png",
-      "site": "https://www.empro.com.br/"
+      "avatar": "/assets/empro.jpg",
+      "site": "https://www.empro.com.br"
     },
     "PCA": {
       "name": "PCA",
-      "avatar": "https://www.pca.com.br/site/Content/image/logo1-default.png",
-      "site": "https://www.pca.com.br/"
+      "avatar": "/assets/pca.jpg",
+      "site": "https://www.pca.com.br"
     },
     "Microsoft": {
       "name": "Microsoft",
-      "avatar": "https://media-exp1.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_100_100/0/1618231291419?e=1674086400&v=beta&t=knAYdIU-l3y_5WtdTjCcGlnwF6D-Z_jqEiMFGy-380I",
+      "avatar": "/assets/ms.jpg",
       "site": "https://www.microsoft.com"
     },
     "FATEC Rio Preto": {
       "name": "Technology College of São José do Rio Preto – FATEC",
-      "avatar": "https://media-exp1.licdn.com/dms/image/C4D0BAQHEGPSN_BfWoQ/company-logo_100_100/0/1641047967914?e=1674086400&v=beta&t=8ybO-AdTlPfQ-4GJHVy_mqNJU7Mitk6eQ01cyj8EHTM",
-      "site": "https://fatecriopreto.edu.br/"
+      "avatar": "/assets/fatec.png",
+      "site": "https://fatecriopreto.edu.br"
     },
     "Mi9 Retail": {
       "name": "Mi9 Retail",
-      "avatar": "https://media-exp1.licdn.com/dms/image/C560BAQHZ07sGh_BaeQ/company-logo_100_100/0/1547655965064?e=1675900800&v=beta&t=KHCs_nJqyuf3vUmNXZyyLRSYl5n7kV3G1OvUqc3iyUs",
-      "site": "https://mi9retail.com/"
+      "avatar": "/assets/mi9.jpg",
+      "site": "https://mi9retail.com"
     },
     "Hertz": {
       "name": "Hertz",
-      "avatar": "https://media-exp1.licdn.com/dms/image/C510BAQGFsJHoWqZ7Kg/company-logo_100_100/0/1519855888383?e=1675900800&v=beta&t=xkLm3dZWR3ebBzD7RvodzwYrg11B8FDSJngA-9CfGsk",
+      "avatar": "/assets/hertz.jpg",
       "site": "https://www.hertz.com"
+    },
+    "MasterCard": {
+      "name": "MasterCard",
+      "avatar": "/assets/mc.svg",
+      "site": "https://www.mastercard.com"
     }
   }
 }

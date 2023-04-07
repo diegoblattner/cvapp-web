@@ -4,8 +4,6 @@ import path from "path";
 
 export default defineConfig(() => ({
   plugins: [preact()],
-  root: './src/',
-  build: { outDir: '../dist/', emptyOutDir: true },
   resolve: {
     alias: {
       "@components": path.resolve(__dirname, "src/components"),
