@@ -22,7 +22,7 @@ const Button = ({ className = '', text, icon, onClick }: ButtonProps) => (
 
 type LinkProps = BaseProps & {
   href: string;
-  icon: string;
+  icon?: string;
 };
 
 const Link = ({ className = '', text, icon, href }: LinkProps) => (

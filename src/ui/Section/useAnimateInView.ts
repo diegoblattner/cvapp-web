@@ -1,6 +1,6 @@
 import { RefObject } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
-import debounce from "debounce";
+import debounce from "lodash.debounce";
 
 const uiGap = 30;
 const elementIsInView = (element: HTMLElement) => {
@@ -36,7 +36,7 @@ export const useAnimateInView = (containerRef: RefObject<HTMLElement>, inViewCla
           }
         },
         100,
-        200,
+        {maxWait: 200},
       );
       document.addEventListener('scroll', onScroll.current);
     }

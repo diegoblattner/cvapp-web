@@ -17,6 +17,9 @@ const Footer = () => (
       <li className={styles.li}>
         The icons used in this webpage come from <Link href="https://icomoon.io/" text="IcoMoon" />
       </li>
+      <li className={styles.li}>
+        Font <Link href="https://fonts.google.com/specimen/Atkinson+Hyperlegible" text="Atkinson Hyperlegible" />
+      </li>
     </List>
   </footer>
 );
