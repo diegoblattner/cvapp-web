@@ -3,6 +3,7 @@ import { Section } from '@ui/Section/Section';
 import { withSlidePanel, WithSlidePanelProps } from '@ui/SlidePanel/withSlidePanel';
 import type { CVData } from '@types';
 import { Profile } from '../Profile/Profile';
+import { About } from '../About/About';
 import { Skills } from '../Skills/Skills';
 import { Experience } from '../Experience/Experience';
 import { Certifications } from '../Certifications/Certifications';
@@ -21,6 +22,7 @@ type AppMainComponentProps = WithSlidePanelProps<{
  */
 const AppMainComponent = ({ cvData, slidePanel }: AppMainComponentProps) => {
   const {
+    about,
     profile,
     skills,
     experience,
@@ -35,6 +37,9 @@ const AppMainComponent = ({ cvData, slidePanel }: AppMainComponentProps) => {
     <Fragment>
       <Section startVisible>
         <Profile {...profile} />
+      </Section >
+      <Section title="About me">
+        <About text={about} />
       </Section >
       <Section title="Skills">
         <Skills skills={skills} />

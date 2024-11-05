@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "Diego Blattner",
-    "position": "Software Engineer - Front End",
+    "position": "Senior Software Engineer - Front End",
     "avatar": "/assets/profile.jpg",
     "email": "diblattner@gmail.com",
     "github": "https://github.com/diegoblattner",
@@ -9,15 +9,16 @@
     "cvLink": "https://docs.google.com/document/d/1ISD6H6ZtOgtrRhHst4xl9QJIZ7XBVoJDTdHhqgDnI2U/edit?usp=sharing",
     "bio": "A short bio goes here"
   },
+  "about": "EU Citizen (no visa required to work in the EU). Experienced in working with global teams across multiple time zones (i.e. UTC-8 PST). Highly attentive to detail. Vast backend knowledge and understanding. Strive to create the best product and processes possible. Team player. Problem solver. Natural leader. I take ownership and resolve issues effectively.",
   "skills": [
-    "TypeScript",
-    "React",
-    "Unit testing",
-    "HTML/Accessibility",
-    "Cypress",
-    "Agile Methodology",
-    "CSS/SASS/BEM",
-    "CI/CD",
+    "TypeScript (7 years)",
+    "React (7 years)",
+    "Cypress/Playwright",
+    "Accessibility (WCAG)",
+    "Internationalization (i18n)/RTL",
+    "Localization",
+    "CSS/TailwindCSS",
+    "API integration",
     "People Management"
   ],
   "experience": [
@@ -28,8 +29,9 @@
       "company": "MasterCard",
       "projects": [
         {
-          "name": "CypherTrace Sentry",
-          "description": "Building and maintaining frontend applications for the crypto space."
+          "name": "CipherTrace Sentry",
+          "description": "Built and maintained frontend applications for the crypto space related to KYC (know your customer) and KYT (know your transaction) for several blockchains. Lead the frontend development, chose libraries, architecture, build tools, developed a shared component library using storybook.",
+          "used": "Typescript, React, Storybook, Vite, Vitest, TailwindCSS, TanstackQuery, D3.js, NodeJS, NestJS, Docker"
         }
       ]
     },
@@ -40,8 +42,9 @@
       "company": "Hertz",
       "projects": [
         {
-          "name": "Hertz International",
-          "description": "Built a new car hire reservation widget using micro front-ends, a CMS and a component library."
+          "name": "Reservation Widget",
+          "description": "Built a shared component library and a new car hire reservation widget using micro frontends and AEM CMS.",
+          "used": "Typescript, React, Storybook, Webpack module federation, MUI, Styled Components, Jest, Cypress"
         }
       ]
     },
@@ -53,7 +56,8 @@
       "projects": [
         {
           "name": "Admin Panel",
-          "description": "Built and maintained a Typescript React SPA. The application consist of several modules that allow mi9’s clients to set up and manage all branches of an online groceries platform. The clients can configure product search results, set up physical and online stores, manage orders from placed to fulfilled stages, create recipes, recommendations, manage customers and so on."
+          "description": "Built and maintained a Typescript React SPA. The application consists of several modules that allow mi9’s clients to set up and manage all branches of an online groceries platform. The clients can configure product search results, set up physical and online stores, manage orders from placed to fulfilled stages, create recipes, recommendations, manage customers and so on.",
+          "used": "Typescript, React, Styleguidst, SASS, REST, Jasmine, Eslint, SonnarQube, TeamCity, Octopus"
         }
       ]
     },
@@ -199,6 +203,10 @@
     {
       "name": "Portuguese",
       "level": "Native"
+    },
+    {
+      "name": "Spanish",
+      "level": "Advanced"
     }
   ],
   "companies": {
