@@ -8,10 +8,13 @@ import styles from './styles.module.scss';
 type Unarray<T> = T extends Array<infer U> ? U : T;
 type RoleDetailsProps = Experience;
 
-const Project = ({ name, description, tasks }: Unarray<RoleDetailsProps["projects"]>) => (
+const Project = ({ name, description, tasks, used }: Unarray<RoleDetailsProps["projects"]>) => (
   <li>
     {name && <h4 className={styles.heading}>{name}</h4>}
     {description && <p className={styles.paragraph}>{description}</p>}
+    {used && (
+      <p className={styles.paragraph}>• {used}</p>
+    )}
     {tasks && tasks.length > 0 && (
       <>
         <h4 className={styles.heading}>Tasks</h4>

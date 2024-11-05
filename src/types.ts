@@ -18,6 +18,7 @@ export type Experience = {
     name?: string;
     description?: string;
     tasks?: string[];
+    used?: string;
   }[];
 };
 
@@ -45,6 +46,7 @@ export type Company = {
 };
 
 export type CVData = {
+  about: string;
   profile: Profile;
   skills: string[];
   experience: Experience[];
