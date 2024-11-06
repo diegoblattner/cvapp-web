@@ -1,10 +1,10 @@
-@import '../../_variables';
+@use '../../variables';
 $avatarWidth: 3rem;
 
 .header {
   display: flex;
   flex-direction: column;
-  @include maxWidthQuery {
+  @include variables.maxWidthQuery {
     flex-direction: row;
   }
 }
@@ -42,7 +42,7 @@ $avatarWidth: 3rem;
   display: flex;
   margin-top: 0.5rem;
   padding: 0 2rem;
-  @include maxWidthQuery {
+  @include variables.maxWidthQuery {
     margin-top: 0;
     padding: 0;
     flex-grow: 0.5;

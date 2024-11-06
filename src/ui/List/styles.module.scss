@@ -1,9 +1,9 @@
-@import '../../_variables';
+@use '../../variables';
 
 .list {
   padding: 0rem 0.8rem;
 
   > li + li {
-    margin-top: $margin;
+    margin-top: variables.$margin;
   }
 }

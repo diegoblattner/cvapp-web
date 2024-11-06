@@ -1,4 +1,4 @@
-@import '../../_variables';
+@use '../../variables';
 
 .links {
   margin: 0.1rem 0 0;
@@ -17,8 +17,8 @@
   animation-fill-mode: forwards;
   animation-timing-function: linear;
   
-  @include noHighlights;
-  @include clickable;
+  @include variables.noHighlights;
+  @include variables.clickable;
 }
 
 .links__button + .links__button {

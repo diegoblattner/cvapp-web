@@ -1,25 +1,25 @@
-@import '../../_variables';
+@use '../../variables';
 $padding-left: 4.25rem;
 
 .container {
-  margin-bottom: $margin*4;
+  margin-bottom: variables.$margin*4;
 }
 
 .role {
-  margin-left: $margin;
-  margin-top: $margin*2;
-  margin-bottom: $margin*6;
+  margin-left: variables.$margin;
+  margin-top: variables.$margin*2;
+  margin-bottom: variables.$margin*6;
 }
 
 .heading {
   font-weight: 700;
   font-size: 1.2rem;
-  margin-top: $margin * 4;
+  margin-top: variables.$margin * 4;
 }
 
 .paragraph {
-  font-size: $fontSize;
+  font-size: variables.$fontSize;
   line-height: 1.6em;
   text-align: justify;
-  margin: $margin 0;
+  margin: variables.$margin 0;
 }
