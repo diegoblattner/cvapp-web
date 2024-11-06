@@ -7,7 +7,9 @@ $maxWidth: 1024px;
 
 @mixin maxWidthQuery {
   @media only screen and (min-width: $maxWidth) {
-    @content
+    & {
+      @content;
+    }
   }
 }
 

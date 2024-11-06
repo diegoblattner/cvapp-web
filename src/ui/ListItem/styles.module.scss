@@ -1,17 +1,17 @@
 @use 'sass:math';
-@import '../../_variables';
+@use '../../variables';
 
 $padding-left: 4.25rem;
 
 .listItem {
   position: relative;
-  padding: math.div($margin, 2) math.div($margin, 2) $margin;
-  margin-bottom: math.div($margin, 2);
+  padding: math.div(variables.$margin, 2) math.div(variables.$margin, 2) variables.$margin;
+  margin-bottom: math.div(variables.$margin, 2);
 }
 
 .listItem__name {
   padding-left: $padding-left;
-  padding-top: math.div($margin, 2);
+  padding-top: math.div(variables.$margin, 2);
   display: block;
   font-size: 1.2rem;
   line-height: 1.6rem;
@@ -25,7 +25,7 @@ $padding-left: 4.25rem;
 .listItem__subtitle {
   display: block;
   padding-left: $padding-left;
-  font-size: $fontSize;
+  font-size: variables.$fontSize;
   font-weight: 400;
 }
 
@@ -33,7 +33,7 @@ $padding-left: 4.25rem;
   position: absolute;
   top: calc(50% - 1.25rem);
   right: -0.25rem;
-  color: $primaryColor;
+  color: variables.$primaryColor;
   font-size: 2.25rem;
 }
 
@@ -45,6 +45,6 @@ $padding-left: 4.25rem;
   width: 100%;
   text-align: unset;
   
-  @include noHighlights;
-  @include clickable;
+  @include variables.noHighlights;
+  @include variables.clickable;
 }

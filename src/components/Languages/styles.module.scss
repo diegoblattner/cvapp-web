@@ -1,6 +1,7 @@
 .languages {
   display: flex;
-  gap: 4rem;
+  gap: 1em;
+  flex-wrap: wrap;
 
   > li + li {
     margin-top: unset;

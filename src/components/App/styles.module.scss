@@ -1,4 +1,4 @@
-@import '../../_variables';
+@use '../../variables';
 
 /* atkinson-hyperlegible-regular - latin */
 @font-face {
@@ -27,7 +27,7 @@ body {
   line-height: 16px;
   font-family: 'Atkinson Hyperlegible', sans-serif;
   box-sizing: border-box;
-  color: $blackColor;
+  color: variables.$blackColor;
   scroll-behavior: smooth;
 }
 
@@ -38,6 +38,6 @@ ul {
 }
 
 .main {
-  @include maxWidthContainer;
   height: 100vh;
+  @include variables.maxWidthContainer;
 }

@@ -1,8 +1,8 @@
-@import '../../_variables';
+@use '../../variables';
 
 .li {
   text-align: justify;
   & + & {
-    margin-top: $margin*3;
+    margin-top: variables.$margin*3;
   }
 }

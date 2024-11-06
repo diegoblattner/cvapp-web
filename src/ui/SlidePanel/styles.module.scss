@@ -1,10 +1,10 @@
-@import '../../_variables';
+@use '../../variables';
 
 $animation-duration: 0.5s;
 
 .withslidepanel {
   background: black;
-  @include maxWidthQuery {
+  @include variables.maxWidthQuery {
     background: white;
   }
 }
@@ -52,9 +52,9 @@ body:has(.withslidepanel__container__slidepanelon) {
   box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
   z-index: 1;
   padding: 1rem 0 4rem 0;
-  @include maxWidthQuery {
-    width: $maxWidth;
-    right: -($maxWidth + 60px);
+  @include variables.maxWidthQuery {
+    width: variables.$maxWidth;
+    right: -(variables.$maxWidth + 60px);
   }
 }
 
@@ -77,12 +77,12 @@ body:has(.withslidepanel__container__slidepanelon) {
   padding: 0.5rem;
   background: none;
   border: 0;
-  color: $primaryColor;
+  color: variables.$primaryColor;
   float: left;
   font-size: 1.4rem;
   outline: 0;
 
-  @include clickable;
+  @include variables.clickable;
 }
 
 .slidepanel__header__title {

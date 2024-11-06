@@ -1,4 +1,4 @@
-@import '../../_variables';
+@use '../../variables';
 
 .button {
   margin: 0;
@@ -7,11 +7,11 @@
   background: none;
   text-align: center;
   font-size: 0.8rem;
-  color: $primaryColor;
+  color: variables.$primaryColor;
   outline: 0;
   text-decoration: none;
   
-  @include clickable;
+  @include variables.clickable;
 }
 
 .button__icon {
